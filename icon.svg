@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="512"
+     height="512"
+     viewBox="0 0 512 512">
+
+  <rect width="512"
+        height="512"
+        rx="95"
+        fill="#0c1118"/>
+
+  <rect x="44"
+        y="44"
+        width="424"
+        height="424"
+        rx="70"
+        fill="none"
+        stroke="#c6a15b"
+        stroke-width="8"/>
+
+  <path d="M150 135
+           H365
+           V185
+           H210
+           V235
+           H345
+           V285
+           H210
+           V385
+           H150
+           Z"
+        fill="#c6a15b"/>
+
+</svg>
