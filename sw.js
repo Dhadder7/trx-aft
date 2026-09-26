@@ -1,4 +1,4 @@
-const CACHE = "forge-aft-v1";
+const CACHE = "forge-aft-v2";
 
 const FILES = [
   "./",
