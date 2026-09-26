@@ -13,9 +13,7 @@ let currentView = "home";
 let selectedWeek = 1;
 let selectedDay = null;
 
-/* ------------------------------
-   EXERCISE LIBRARY
------------------------------- */
+/* EXERCISE LIBRARY */
 
 const EX = {
   trxSquat: {
@@ -254,9 +252,7 @@ const EX = {
   }
 };
 
-/* ------------------------------
-   12-WEEK PROGRAM
------------------------------- */
+/* 12-WEEK PROGRAM */
 
 function phaseForWeek(w) {
   if (w <= 4) return "FOUNDATION";
@@ -277,26 +273,33 @@ function exercise(id, sets, reps, rest, note = "") {
 }
 
 const YOGA_BY_DAY = {
+  Monday: {
+    time: "EVENING • 8:00 PM",
+    title: "Neck, Shoulders & Upper Back",
+    duration: "10 minutes",
+    focus: "Gentle upper-body mobility after strength training. Stay in a pain-free range.",
+    url: "https://www.youtube.com/watch?v=X3-gKPNyrTA"
+  },
   Tuesday: {
     time: "EVENING • 8:00 PM",
     title: "Runner's Yoga",
     duration: "30 minutes",
-    focus: "Leg and hip mobility after your run",
+    focus: "Low-to-the-ground hip and leg mobility after your run.",
     url: "https://www.youtube.com/watch?v=0hTllAb4XGg"
   },
   Thursday: {
     time: "EVENING • 7:00 PM",
-    title: "Yoga for Hips & Lower Back",
-    duration: "23 minutes",
-    focus: "Gentle hip and lower-back mobility",
-    url: "https://www.youtube.com/watch?v=Ho9em79_0qg"
+    title: "20-Minute Yoga for Beginners",
+    duration: "20 minutes",
+    focus: "Full-body mobility: spine, hips, shoulders, hamstrings and ankles.",
+    url: "https://www.youtube.com/watch?v=vNyJuQuuMC8"
   },
   Saturday: {
     time: "EVENING • 8:00 PM",
-    title: "Bedtime Yoga",
-    duration: "20 minutes",
-    focus: "Gentle full-body stretching after your aerobic day",
-    url: "https://www.youtube.com/watch?v=v7SN-d4qXx0"
+    title: "Yoga for Hips & Lower Back",
+    duration: "23 minutes",
+    focus: "Hip and lower-back mobility after your aerobic session.",
+    url: "https://www.youtube.com/watch?v=Ho9em79_0qg"
   }
 };
 
@@ -403,10 +406,9 @@ function getWeekPlan(week) {
     },
 
     Thursday: {
-      title: "Recovery + Mobility",
-      subtitle: "20–30 min easy yoga / mobility",
+      title: "Recovery + Guided Yoga",
+      subtitle: "20-min full-body mobility • 7 PM",
       type: "recovery",
-      cardio: "20–30 min mobility or gentle yoga",
       exercises: []
     },
 
@@ -441,9 +443,7 @@ function getWeekPlan(week) {
   };
 }
 
-/* ------------------------------
-   STORAGE
------------------------------- */
+/* STORAGE */
 
 function loadData() {
   try {
@@ -466,9 +466,7 @@ function completedKey(week, day, index) {
   return `${workoutKey(week, day)}-${index}`;
 }
 
-/* ------------------------------
-   NAVIGATION
------------------------------- */
+/* NAVIGATION */
 
 const app = document.getElementById("app");
 
@@ -633,6 +631,9 @@ function openWeek(week) {
         <div class="day-info">
           <strong>${day}</strong>
           <span>${workout.title} • ${workout.subtitle}</span>
+          ${YOGA_BY_DAY[day]
+            ? `<span style="display:block; margin-top:5px; color:var(--gold)">🧘 Yoga • ${YOGA_BY_DAY[day].duration} • ${YOGA_BY_DAY[day].time}</span>`
+            : ""}
         </div>
 
         <span class="status-dot ${status}"></span>
@@ -810,7 +811,7 @@ function openDay(day) {
         <p>
           ${workout.type === "rest"
             ? "No required training today. Easy walking or gentle mobility is optional."
-            : "Keep this session comfortable. The purpose is recovery and movement quality."
+            : "Optional easy walk or rest. Keep today's movement comfortable."
           }
         </p>
       </section>
@@ -828,7 +829,7 @@ function openDay(day) {
            target="_blank"
            rel="noopener noreferrer"
            style="display:block; text-align:center; text-decoration:none; margin-top:14px;">
-          ▶ Watch yoga video
+          ▶ Follow along on YouTube
         </a>
       </section>
       `
@@ -893,9 +894,7 @@ function openDay(day) {
   `;
 }
 
-/* ------------------------------
-   EXERCISE MODAL
------------------------------- */
+/* EXERCISE MODAL */
 
 function showExercise(id) {
   const e = EX[id];
@@ -932,9 +931,7 @@ function closeModal() {
   document.getElementById("modal").classList.add("hidden");
 }
 
-/* ------------------------------
-   COMPLETION
------------------------------- */
+/* COMPLETION */
 
 function toggleExercise(week, day, index, checked) {
   state.completed[completedKey(week, day, index)] = checked;
@@ -999,9 +996,7 @@ function totalCompletion() {
   return Math.round(total / 12);
 }
 
-/* ------------------------------
-   MEASUREMENTS
------------------------------- */
+/* MEASUREMENTS */
 
 function saveMeasurement(week, field, value) {
   state.measurements[week] ||= {};
@@ -1041,9 +1036,7 @@ function changeHTML(current, previous, unit) {
   `;
 }
 
-/* ------------------------------
-   WORKOUT LOG
------------------------------- */
+/* WORKOUT LOG */
 
 function saveWorkoutField(key, field, value) {
   state.workoutData[key] ||= {};
@@ -1051,9 +1044,7 @@ function saveWorkoutField(key, field, value) {
   saveData();
 }
 
-/* ------------------------------
-   PROGRESS
------------------------------- */
+/* PROGRESS */
 
 function renderProgress() {
   app.innerHTML = `
@@ -1190,9 +1181,7 @@ function drawChart(canvasId, field) {
   });
 }
 
-/* ------------------------------
-   AFT TRACKER
------------------------------- */
+/* AFT TRACKER */
 
 function renderAFT() {
   const rows = state.aftTests
@@ -1305,9 +1294,7 @@ function deleteAFT(index) {
   renderAFT();
 }
 
-/* ------------------------------
-   RECOVERY MODE
------------------------------- */
+/* RECOVERY MODE */
 
 function toggleRecovery() {
   state.recoveryMode = !state.recoveryMode;
@@ -1315,9 +1302,7 @@ function toggleRecovery() {
   renderHome();
 }
 
-/* ------------------------------
-   BACKUP / RESTORE
------------------------------- */
+/* BACKUP / RESTORE */
 
 function renderBackup() {
   app.innerHTML = `
@@ -1435,9 +1420,7 @@ function resetData() {
   renderHome();
 }
 
-/* ------------------------------
-   TIMER
------------------------------- */
+/* TIMER */
 
 let timerSeconds = 60;
 let timerOriginal = 60;
@@ -1488,9 +1471,7 @@ function resetTimer() {
   updateTimerDisplay();
 }
 
-/* ------------------------------
-   DRAWER
------------------------------- */
+/* DRAWER */
 
 function openDrawer() {
   document.getElementById("drawer").classList.add("open");
@@ -1502,9 +1483,7 @@ function closeDrawer() {
   document.getElementById("drawerOverlay").classList.remove("open");
 }
 
-/* ------------------------------
-   EVENTS
------------------------------- */
+/* EVENTS */
 
 document.getElementById("menuBtn")
   .addEventListener("click",openDrawer);
@@ -1554,9 +1533,7 @@ document.getElementById("timerStart")
 document.getElementById("timerReset")
   .addEventListener("click",resetTimer);
 
-/* ------------------------------
-   SERVICE WORKER
------------------------------- */
+/* SERVICE WORKER */
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load",() => {
@@ -1564,8 +1541,6 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-/* ------------------------------
-   START
------------------------------- */
+/* START */
 
 renderHome();
