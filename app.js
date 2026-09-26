@@ -13,246 +13,36 @@ let currentView = "home";
 let selectedWeek = 1;
 let selectedDay = null;
 
-/* EXERCISE LIBRARY */
-
 const EX = {
-  trxSquat: {
-    name: "TRX Squat",
-    how: "Face the anchor. Hold the handles with light tension. Sit your hips down and back while keeping your chest tall, then drive through the whole foot to stand.",
-    cues: [
-      "Keep knees tracking in the same direction as your toes.",
-      "Use the straps for balance, not to pull yourself up.",
-      "Keep your ribs stacked over your pelvis.",
-      "Progress by using less assistance or moving toward single-leg variations."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+Squat+official+exercise"
-  },
-
-  trxChest: {
-    name: "TRX Chest Press",
-    how: "Face away from the anchor with arms extended. Keep your body straight from head to heel. Bend your elbows and lower your chest between the handles, then press away.",
-    cues: [
-      "Brace your abs before every repetition.",
-      "Do not allow your hips to sag.",
-      "Keep shoulders away from your ears.",
-      "Walk your feet farther back to make it easier and farther toward the anchor to make it harder."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+Chest+Press+official+exercise"
-  },
-
-  trxRow: {
-    name: "TRX Row",
-    how: "Face the anchor and lean back with straight arms. Keep your body rigid. Pull your chest toward the handles by driving your elbows behind you, then lower under control.",
-    cues: [
-      "Do not shrug.",
-      "Keep hips extended instead of folding at the waist.",
-      "Pause briefly with the shoulder blades squeezed together.",
-      "Move your feet toward the anchor to increase difficulty."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+Row+official+exercise"
-  },
-
-  reverseLunge: {
-    name: "TRX Reverse Lunge",
-    how: "Face the anchor. Step one leg backward and lower the rear knee toward the floor. Keep most of your pressure through the front foot, then drive through the front leg to stand.",
-    cues: [
-      "Use the straps only for balance.",
-      "Keep the front heel planted.",
-      "Control the lowering portion.",
-      "Keep the front knee tracking over the foot."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+Reverse+Lunge+exercise"
-  },
-
-  splitSquat: {
-    name: "TRX Split Squat",
-    how: "Stand in a staggered stance while lightly holding the TRX. Lower straight down until the front thigh approaches parallel, then drive through the front leg.",
-    cues: [
-      "Keep most of the load on the front leg.",
-      "Maintain a tall torso.",
-      "Lower slowly.",
-      "Use progressively less help from your arms."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+Split+Squat+exercise"
-  },
-
-  singleSquat: {
-    name: "TRX Assisted Single-Leg Squat",
-    how: "Face the anchor and balance on one leg. Sit the hips back and lower under control while using only enough strap assistance to maintain position. Drive through the working leg to stand.",
-    cues: [
-      "Do not pull yourself up with your arms.",
-      "Keep the working knee aligned with the toes.",
-      "Use a comfortable depth.",
-      "Reduce TRX assistance as you improve."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+single+leg+squat+exercise"
-  },
-
-  hamCurl: {
-    name: "TRX Hamstring Curl",
-    how: "Lie on your back with your heels in the foot cradles. Lift your hips, then pull your heels toward your glutes. Extend your legs slowly without letting your hips collapse.",
-    cues: [
-      "Keep the hips elevated.",
-      "Control the return.",
-      "Brace your abdomen.",
-      "Shorten the range if your hips begin to drop."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+Hamstring+Curl+official"
-  },
-
-  hipPress: {
-    name: "TRX Hip Press",
-    how: "Lie on your back with heels in the foot cradles and knees bent. Brace your core and drive your hips upward by squeezing your glutes.",
-    cues: [
-      "Finish with the glutes rather than arching the lower back.",
-      "Keep ribs down.",
-      "Pause briefly at the top."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+Hip+Press+exercise"
-  },
-
-  bstanceRDL: {
-    name: "15-lb KB B-Stance RDL",
-    how: "Place one foot slightly behind the other as a kickstand. Keep roughly 80–90% of your weight on the front leg. Push the hips backward while lowering the kettlebell, then squeeze the front glute to stand.",
-    cues: [
-      "This is a hip hinge, not a squat.",
-      "Keep your spine neutral.",
-      "Feel tension in the front-leg hamstring.",
-      "Use a three-second lowering phase to make 15 lb more challenging."
-    ],
-    video: "https://www.youtube.com/results?search_query=kettlebell+B+stance+Romanian+deadlift+form"
-  },
-
-  singleRDL: {
-    name: "15-lb KB Single-Leg RDL",
-    how: "Stand on one leg with a slight knee bend. Push your hips backward as the opposite leg extends behind you. Lower the kettlebell under control, then squeeze the standing-leg glute to return.",
-    cues: [
-      "Keep the hips relatively square to the floor.",
-      "Use the TRX lightly for balance if necessary.",
-      "Move through the hip rather than rounding your back.",
-      "Use a slow three-second lowering phase."
-    ],
-    video: "https://www.youtube.com/results?search_query=kettlebell+single+leg+RDL+proper+form"
-  },
-
-  swing: {
-    name: "15-lb Kettlebell Swing",
-    how: "Hinge at the hips and hike the kettlebell behind you. Drive the floor away and snap the hips forward. Allow the kettlebell to float; guide it back into the next hinge.",
-    cues: [
-      "The power comes from the hips—not the arms.",
-      "Keep your spine neutral.",
-      "Keep your feet planted.",
-      "Finish tall with glutes and abs tight.",
-      "Do not turn the movement into a squat or front raise."
-    ],
-    video: "https://www.youtube.com/watch?v=yHxcTn1UeAc"
-  },
-
-  sprinter: {
-    name: "TRX Sprinter Start",
-    how: "Face away from the anchor with the straps under your arms. Lean forward into the straps, step one leg back, then drive forward through the front leg.",
-    cues: [
-      "Maintain a straight line through your torso.",
-      "Drive through the ball and heel of the working foot.",
-      "Keep the movement powerful but controlled."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+Sprinter+Start+exercise"
-  },
-
-  triceps: {
-    name: "TRX Triceps Press",
-    how: "Face away from the anchor with arms extended in front of you. Bend only at the elbows and bring your forehead toward your hands, then straighten your arms.",
-    cues: [
-      "Keep elbows pointed forward.",
-      "Brace your abdomen.",
-      "Keep the upper arms relatively still."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+Triceps+Press+official"
-  },
-
-  biceps: {
-    name: "TRX Biceps Curl",
-    how: "Face the anchor with palms toward your face. Keep your upper arms high while bending your elbows and bringing your hands toward your forehead.",
-    cues: [
-      "Do not let the elbows drop.",
-      "Keep your body rigid.",
-      "Lower slowly."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+Biceps+Curl+official"
-  },
-
-  yfly: {
-    name: "TRX Y-Fly",
-    how: "Face the anchor and lean back. With straight arms, raise the arms overhead into a Y while bringing your body toward upright.",
-    cues: [
-      "Use a conservative body angle.",
-      "Do not shrug.",
-      "Move slowly and control the return.",
-      "Stop if the movement causes shoulder pain."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+Y+Fly+exercise"
-  },
-
-  plank: {
-    name: "Plank",
-    how: "Support yourself on your forearms and toes. Create a straight line from head through heels and maintain full-body tension.",
-    cues: [
-      "Squeeze glutes.",
-      "Brace as though preparing for a punch.",
-      "Do not allow the hips to sag.",
-      "Breathe while maintaining tension."
-    ],
-    video: "https://www.youtube.com/results?search_query=proper+forearm+plank+form"
-  },
-
-  trxPlank: {
-    name: "TRX Plank",
-    how: "Place your feet in the TRX foot cradles and support yourself on your forearms or hands. Hold a rigid plank position.",
-    cues: [
-      "Master a floor plank first.",
-      "Keep hips level.",
-      "Brace your abdomen and glutes.",
-      "Avoid excessive lower-back arch."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+Plank+official"
-  },
-
-  fallout: {
-    name: "TRX Fallout",
-    how: "Face away from the anchor with arms extended. Slowly allow your arms to travel forward while maintaining a rigid torso, then use your core and lats to return.",
-    cues: [
-      "Do not let the lower back arch.",
-      "Use a short range initially.",
-      "Keep ribs down."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+Fallout+exercise"
-  },
-
-  mountain: {
-    name: "TRX Mountain Climber",
-    how: "Place your feet in the cradles and assume a strong push-up position. Alternate driving each knee toward your chest.",
-    cues: [
-      "Keep shoulders stacked over hands.",
-      "Keep hips controlled.",
-      "Prioritize position over speed."
-    ],
-    video: "https://www.youtube.com/results?search_query=TRX+Mountain+Climber+exercise"
-  },
-
-  pushup: {
-    name: "Hand-Release Push-Up Practice",
-    how: "Lower your chest and thighs to the ground. Briefly lift your hands from the floor, replace them, and press your body upward as one unit.",
-    cues: [
-      "Keep your body rigid.",
-      "Do not allow the hips to rise before the chest.",
-      "Use a comfortable range and stop for shoulder pain.",
-      "Quality repetitions matter more than rushing."
-    ],
-    video: "https://www.youtube.com/results?search_query=Army+hand+release+push+up+proper+form"
-  }
+  trxSquat: {"name":"TRX Squat","how":"Face the anchor. Hold the handles with light tension. Sit your hips down and back while keeping your chest tall, then drive through the whole foot to stand.","cues":["Keep knees tracking in the same direction as your toes.","Use the straps for balance, not to pull yourself up.","Keep your ribs stacked over your pelvis.","Progress by using less assistance or moving toward single-leg variations."],"video":"https://www.youtube.com/results?search_query=TRX+Squat+official+exercise"},
+  trxChest: {"name":"TRX Chest Press","how":"Face away from the anchor with arms extended. Keep your body straight from head to heel. Bend your elbows and lower your chest between the handles, then press away.","cues":["Brace your abs before every repetition.","Do not allow your hips to sag.","Keep shoulders away from your ears.","Walk your feet farther back to make it easier and farther toward the anchor to make it harder."],"video":"https://www.youtube.com/results?search_query=TRX+Chest+Press+official+exercise"},
+  trxRow: {"name":"TRX Row","how":"Face the anchor and lean back with straight arms. Keep your body rigid. Pull your chest toward the handles by driving your elbows behind you, then lower under control.","cues":["Do not shrug.","Keep hips extended instead of folding at the waist.","Pause briefly with the shoulder blades squeezed together.","Move your feet toward the anchor to increase difficulty."],"video":"https://www.youtube.com/results?search_query=TRX+Row+official+exercise"},
+  reverseLunge: {"name":"TRX Reverse Lunge","how":"Face the anchor. Step one leg backward and lower the rear knee toward the floor. Keep most of your pressure through the front foot, then drive through the front leg to stand.","cues":["Use the straps only for balance.","Keep the front heel planted.","Control the lowering portion.","Keep the front knee tracking over the foot."],"video":"https://www.youtube.com/results?search_query=TRX+Reverse+Lunge+exercise"},
+  splitSquat: {"name":"TRX Split Squat","how":"Stand in a staggered stance while lightly holding the TRX. Lower straight down until the front thigh approaches parallel, then drive through the front leg.","cues":["Keep most of the load on the front leg.","Maintain a tall torso.","Lower slowly.","Use progressively less help from your arms."],"video":"https://www.youtube.com/results?search_query=TRX+Split+Squat+exercise"},
+  singleSquat: {"name":"TRX Assisted Single-Leg Squat","how":"Face the anchor and balance on one leg. Sit the hips back and lower under control while using only enough strap assistance to maintain position. Drive through the working leg to stand.","cues":["Do not pull yourself up with your arms.","Keep the working knee aligned with the toes.","Use a comfortable depth.","Reduce TRX assistance as you improve."],"video":"https://www.youtube.com/results?search_query=TRX+single+leg+squat+exercise"},
+  hamCurl: {"name":"TRX Hamstring Curl","how":"Lie on your back with your heels in the foot cradles. Lift your hips, then pull your heels toward your glutes. Extend your legs slowly without letting your hips collapse.","cues":["Keep the hips elevated.","Control the return.","Brace your abdomen.","Shorten the range if your hips begin to drop."],"video":"https://www.youtube.com/results?search_query=TRX+Hamstring+Curl+official"},
+  hipPress: {"name":"TRX Hip Press","how":"Lie on your back with heels in the foot cradles and knees bent. Brace your core and drive your hips upward by squeezing your glutes.","cues":["Finish with the glutes rather than arching the lower back.","Keep ribs down.","Pause briefly at the top."],"video":"https://www.youtube.com/results?search_query=TRX+Hip+Press+exercise"},
+  bstanceRDL: {"name":"15-lb KB B-Stance RDL","how":"Place one foot slightly behind the other as a kickstand. Keep roughly 80–90% of your weight on the front leg. Push the hips backward while lowering the kettlebell, then squeeze the front glute to stand.","cues":["This is a hip hinge, not a squat.","Keep your spine neutral.","Feel tension in the front-leg hamstring.","Use a three-second lowering phase to make 15 lb more challenging."],"video":"https://www.youtube.com/results?search_query=kettlebell+B+stance+Romanian+deadlift+form"},
+  singleRDL: {"name":"15-lb KB Single-Leg RDL","how":"Stand on one leg with a slight knee bend. Push your hips backward as the opposite leg extends behind you. Lower the kettlebell under control, then squeeze the standing-leg glute to return.","cues":["Keep the hips relatively square to the floor.","Use the TRX lightly for balance if necessary.","Move through the hip rather than rounding your back.","Use a slow three-second lowering phase."],"video":"https://www.youtube.com/results?search_query=kettlebell+single+leg+RDL+proper+form"},
+  swing: {"name":"15-lb Kettlebell Swing","how":"Hinge at the hips and hike the kettlebell behind you. Drive the floor away and snap the hips forward. Allow the kettlebell to float; guide it back into the next hinge.","cues":["The power comes from the hips—not the arms.","Keep your spine neutral.","Keep your feet planted.","Finish tall with glutes and abs tight.","Do not turn the movement into a squat or front raise."],"video":"https://www.youtube.com/watch?v=yHxcTn1UeAc"},
+  sprinter: {"name":"TRX Sprinter Start","how":"Face away from the anchor with the straps under your arms. Lean forward into the straps, step one leg back, then drive forward through the front leg.","cues":["Maintain a straight line through your torso.","Drive through the ball and heel of the working foot.","Keep the movement powerful but controlled."],"video":"https://www.youtube.com/results?search_query=TRX+Sprinter+Start+exercise"},
+  triceps: {"name":"TRX Triceps Press","how":"Face away from the anchor with arms extended in front of you. Bend only at the elbows and bring your forehead toward your hands, then straighten your arms.","cues":["Keep elbows pointed forward.","Brace your abdomen.","Keep the upper arms relatively still."],"video":"https://www.youtube.com/results?search_query=TRX+Triceps+Press+official"},
+  biceps: {"name":"TRX Biceps Curl","how":"Face the anchor with palms toward your face. Keep your upper arms high while bending your elbows and bringing your hands toward your forehead.","cues":["Do not let the elbows drop.","Keep your body rigid.","Lower slowly."],"video":"https://www.youtube.com/results?search_query=TRX+Biceps+Curl+official"},
+  yfly: {"name":"TRX Y-Fly","how":"Face the anchor and lean back. With straight arms, raise the arms overhead into a Y while bringing your body toward upright.","cues":["Use a conservative body angle.","Do not shrug.","Move slowly and control the return.","Stop if the movement causes shoulder pain."],"video":"https://www.youtube.com/results?search_query=TRX+Y+Fly+exercise"},
+  plank: {"name":"Plank","how":"Support yourself on your forearms and toes. Create a straight line from head through heels and maintain full-body tension.","cues":["Squeeze glutes.","Brace as though preparing for a punch.","Do not allow the hips to sag.","Breathe while maintaining tension."],"video":"https://www.youtube.com/results?search_query=proper+forearm+plank+form"},
+  trxPlank: {"name":"TRX Plank","how":"Place your feet in the TRX foot cradles and support yourself on your forearms or hands. Hold a rigid plank position.","cues":["Master a floor plank first.","Keep hips level.","Brace your abdomen and glutes.","Avoid excessive lower-back arch."],"video":"https://www.youtube.com/results?search_query=TRX+Plank+official"},
+  fallout: {"name":"TRX Fallout","how":"Face away from the anchor with arms extended. Slowly allow your arms to travel forward while maintaining a rigid torso, then use your core and lats to return.","cues":["Do not let the lower back arch.","Use a short range initially.","Keep ribs down."],"video":"https://www.youtube.com/results?search_query=TRX+Fallout+exercise"},
+  mountain: {"name":"TRX Mountain Climber","how":"Place your feet in the cradles and assume a strong push-up position. Alternate driving each knee toward your chest.","cues":["Keep shoulders stacked over hands.","Keep hips controlled.","Prioritize position over speed."],"video":"https://www.youtube.com/results?search_query=TRX+Mountain+Climber+exercise"},
+  pushup: {"name":"Hand-Release Push-Up Practice","how":"Lower your chest and thighs to the ground. Briefly lift your hands from the floor, replace them, and press your body upward as one unit.","cues":["Keep your body rigid.","Do not allow the hips to rise before the chest.","Use a comfortable range and stop for shoulder pain.","Quality repetitions matter more than rushing."],"video":"https://www.youtube.com/results?search_query=Army+hand+release+push+up+proper+form"}
 };
 
-/* 12-WEEK PROGRAM */
+const YOGA = {
+  Monday: {"when":"Evening · after strength training","title":"Neck, shoulders and upper back","minutes":10,"video":"https://www.youtube.com/watch?v=X3-gKPNyrTA","note":"Gentle upper-body mobility; stay within comfortable shoulder range."},
+  Tuesday: {"when":"After your run · once breathing settles","title":"Post-run yoga","minutes":7,"video":"https://www.youtube.com/watch?v=vhLbp8ibmEE","note":"Easy hips, calves and hamstrings after the run."},
+  Thursday: {"when":"Evening · recovery session","title":"Hips and lower-back release","minutes":23,"video":"https://www.youtube.com/watch?v=Ho9em79_0qg","note":"Your longer flexibility and mobility session. Avoid painful ranges."},
+  Saturday: {"when":"Evening · well after deadlifts","title":"Gentle bedtime yoga","minutes":10,"video":"https://www.youtube.com/watch?v=CLDHeV9OI5U","note":"Keep this gentle after lifting; skip any pose that strains your back."},
+  Sunday: {"when":"Optional · whenever convenient","title":"Full-body flexibility","minutes":16,"video":"https://www.youtube.com/watch?v=Yzm3fA2HhkQ","note":"Optional relaxed practice on your rest day."}
+};
 
 function phaseForWeek(w) {
   if (w <= 4) return "FOUNDATION";
@@ -272,37 +62,6 @@ function exercise(id, sets, reps, rest, note = "") {
   return { id, sets, reps, rest, note };
 }
 
-const YOGA_BY_DAY = {
-  Monday: {
-    time: "EVENING • 8:00 PM",
-    title: "Neck, Shoulders & Upper Back",
-    duration: "10 minutes",
-    focus: "Gentle upper-body mobility after strength training. Stay in a pain-free range.",
-    url: "https://www.youtube.com/watch?v=X3-gKPNyrTA"
-  },
-  Tuesday: {
-    time: "EVENING • 8:00 PM",
-    title: "Runner's Yoga",
-    duration: "30 minutes",
-    focus: "Low-to-the-ground hip and leg mobility after your run.",
-    url: "https://www.youtube.com/watch?v=0hTllAb4XGg"
-  },
-  Thursday: {
-    time: "EVENING • 7:00 PM",
-    title: "20-Minute Yoga for Beginners",
-    duration: "20 minutes",
-    focus: "Full-body mobility: spine, hips, shoulders, hamstrings and ankles.",
-    url: "https://www.youtube.com/watch?v=vNyJuQuuMC8"
-  },
-  Saturday: {
-    time: "EVENING • 8:00 PM",
-    title: "Yoga for Hips & Lower Back",
-    duration: "23 minutes",
-    focus: "Hip and lower-back mobility after your aerobic session.",
-    url: "https://www.youtube.com/watch?v=Ho9em79_0qg"
-  }
-};
-
 function getWeekPlan(week) {
   const p = strengthPrescription(week);
 
@@ -321,15 +80,6 @@ function getWeekPlan(week) {
     week <= 6 ? "50 sec" :
     week <= 8 ? "60 sec" :
     "60–75 sec";
-
-  const swingSets =
-    week <= 2 ? 3 :
-    week <= 6 ? 4 :
-    5;
-
-  const swingReps =
-    week <= 4 ? "12–15" :
-    "15–20";
 
   const runPlan = [
     "30 sec run / 2:30 walk × 8",
@@ -406,8 +156,8 @@ function getWeekPlan(week) {
     },
 
     Thursday: {
-      title: "Recovery + Guided Yoga",
-      subtitle: "20-min full-body mobility • 7 PM",
+      title: "Recovery + Mobility",
+      subtitle: "23 min guided hip and lower-back yoga",
       type: "recovery",
       exercises: []
     },
@@ -417,20 +167,21 @@ function getWeekPlan(week) {
       subtitle: "TRX • KB • Conditioning",
       type: "strength",
       exercises: [
-        exercise("swing", swingSets, swingReps, "60–90 sec"),
-        exercise("sprinter", 3, "10 / leg", "60 sec"),
+        exercise("swing", 2, "10", "60–90 sec",
+          "Light technique work; skip if your back or hamstrings feel fatigued."),
+        exercise("sprinter", 2, "10 / leg", "60 sec"),
         exercise("trxChest", 3, "10–15", "60 sec"),
         exercise("trxRow", 3, "10–15", "60 sec"),
-        exercise(harderLeg, 3, "8–12 / leg", "60 sec"),
+        exercise(harderLeg, 2, "8–12 / leg", "60 sec"),
         exercise("mountain", 3, "20 total", "60 sec")
       ]
     },
 
     Saturday: {
-      title: "Aerobic Base",
-      subtitle: longCardio,
+      title: "Hex-Bar Deadlift + Aerobic Base",
+      subtitle: "Strength first • then " + longCardio,
       type: "cardio",
-      cardio: longCardio,
+      cardio: longCardio + " at an easy pace after deadlifts",
       exercises: []
     },
 
@@ -442,8 +193,6 @@ function getWeekPlan(week) {
     }
   };
 }
-
-/* STORAGE */
 
 function loadData() {
   try {
@@ -465,8 +214,6 @@ function workoutKey(week, day) {
 function completedKey(week, day, index) {
   return `${workoutKey(week, day)}-${index}`;
 }
-
-/* NAVIGATION */
 
 const app = document.getElementById("app");
 
@@ -490,9 +237,7 @@ function renderHome() {
     <section class="hero">
       <div class="eyebrow">12-WEEK AFT REBUILD</div>
       <h1>Build the base.<br>Earn the result.</h1>
-      <p>
-        TRX • 15-lb kettlebell • running • mobility
-      </p>
+      <p>TRX • 15-lb kettlebell • hex-bar deadlift • running • yoga</p>
     </section>
 
     <section class="card">
@@ -631,9 +376,6 @@ function openWeek(week) {
         <div class="day-info">
           <strong>${day}</strong>
           <span>${workout.title} • ${workout.subtitle}</span>
-          ${YOGA_BY_DAY[day]
-            ? `<span style="display:block; margin-top:5px; color:var(--gold)">🧘 Yoga • ${YOGA_BY_DAY[day].duration} • ${YOGA_BY_DAY[day].time}</span>`
-            : ""}
         </div>
 
         <span class="status-dot ${status}"></span>
@@ -710,6 +452,7 @@ function openDay(day) {
   const wk = workoutKey(selectedWeek, day);
 
   const saved = state.workoutData[wk] || {};
+  const yoga = YOGA[day];
 
   let exercises = "";
 
@@ -783,6 +526,8 @@ function openDay(day) {
       : ""
     }
 
+    ${day === "Saturday" ? deadliftCard(selectedWeek) : ""}
+
     ${workout.cardio
       ? `
       <section class="card">
@@ -811,30 +556,24 @@ function openDay(day) {
         <p>
           ${workout.type === "rest"
             ? "No required training today. Easy walking or gentle mobility is optional."
-            : "Optional easy walk or rest. Keep today's movement comfortable."
+            : "Keep this session comfortable. The purpose is recovery and movement quality."
           }
         </p>
       </section>
       `
     }
 
-    ${YOGA_BY_DAY[day]
-      ? `
+    ${yoga ? `
       <section class="card">
-        <div class="eyebrow">YOGA • ${YOGA_BY_DAY[day].time}</div>
-        <h2>${YOGA_BY_DAY[day].title}</h2>
-        <p>${YOGA_BY_DAY[day].duration} • ${YOGA_BY_DAY[day].focus}</p>
-        <a class="primary"
-           href="${YOGA_BY_DAY[day].url}"
-           target="_blank"
-           rel="noopener noreferrer"
-           style="display:block; text-align:center; text-decoration:none; margin-top:14px;">
-          ▶ Follow along on YouTube
+        <div class="eyebrow">GUIDED YOGA • ${yoga.when}</div>
+        <h2>${yoga.title} · ${yoga.minutes} min</h2>
+        <p>${yoga.note}</p>
+        <a href="${yoga.video}" target="_blank" rel="noopener noreferrer"
+           class="primary" style="display:block;text-align:center;text-decoration:none">
+          ▶ Open follow-along yoga video
         </a>
       </section>
-      `
-      : ""
-    }
+    ` : ""}
 
     <section class="card">
       <div class="eyebrow">SESSION LOG</div>
@@ -894,7 +633,57 @@ function openDay(day) {
   `;
 }
 
-/* EXERCISE MODAL */
+function deadliftWeightRow(week, id, label, reps, weights) {
+  return `
+    <div style="display:flex;align-items:center;justify-content:space-between;
+                gap:12px;border-bottom:1px solid var(--border);padding:8px 0">
+      <div><strong>${label}</strong><br><small>${reps} reps</small></div>
+      <div class="field" style="width:105px;flex-shrink:0">
+        <label for="dl-w${week}-${id}">WEIGHT (LB)</label>
+        <input id="dl-w${week}-${id}" type="number" min="0" step="5"
+               inputmode="numeric" placeholder="lb" value="${weights[id] ?? ""}"
+               oninput="saveDeadliftWeight(${week},'${id}',this.value)">
+      </div>
+    </div>`;
+}
+
+function deadliftCard(week) {
+  const weights = state.workoutData[workoutKey(week, "Saturday")]?.deadliftWeights || {};
+  const sets = state.recoveryMode ? 2 : week <= 2 ? 2 : 3;
+  const reps = week <= 6 ? "5" : "3–5";
+  const warmups = [8, 5, 3, 2].map((reps, i) =>
+    deadliftWeightRow(week, `warmup${i + 1}`, `Warm-up ${i + 1}`, reps, weights)
+  ).join("");
+  const work = Array.from({ length: sets }, (_, i) =>
+    deadliftWeightRow(week, `working${i + 1}`, `Working set ${i + 1}`, reps, weights)
+  ).join("");
+
+  return `
+    <section class="card">
+      <div class="eyebrow">SATURDAY STRENGTH • BEFORE CARDIO</div>
+      <h2>Hex-Bar Deadlift</h2>
+      <p>Weeks 1–2: 2 × 5, about 3 reps left in reserve.<br>
+         Weeks 3–6: 3 × 5, about 2 reps left.<br>
+         Weeks 7–12: 3 × 3–5, controlled reps.
+         ${state.recoveryMode ? "Recovery Mode: 2 working sets today." : ""}</p>
+      <p>Rest 2–3 minutes between working sets. Add 5–10 lb next week only
+         if your form was solid and recovery was good. Do not test a max weekly.</p>
+      <div class="eyebrow">WARM-UP SETS • USE AS NEEDED</div>
+      <p><small>Log the total weight of the bar and plates; unused sets can stay blank.</small></p>
+      ${warmups}
+      <div class="eyebrow" style="margin-top:18px">WORKING SETS</div>
+      ${work}
+      <p><small>Record a formal 3-rep-max test separately in the AFT Tracker.</small></p>
+    </section>`;
+}
+
+function saveDeadliftWeight(week, id, value) {
+  const key = workoutKey(week, "Saturday");
+  state.workoutData[key] ||= {};
+  state.workoutData[key].deadliftWeights ||= {};
+  state.workoutData[key].deadliftWeights[id] = value === "" ? null : Number(value);
+  saveData();
+}
 
 function showExercise(id) {
   const e = EX[id];
@@ -930,8 +719,6 @@ function showExercise(id) {
 function closeModal() {
   document.getElementById("modal").classList.add("hidden");
 }
-
-/* COMPLETION */
 
 function toggleExercise(week, day, index, checked) {
   state.completed[completedKey(week, day, index)] = checked;
@@ -996,8 +783,6 @@ function totalCompletion() {
   return Math.round(total / 12);
 }
 
-/* MEASUREMENTS */
-
 function saveMeasurement(week, field, value) {
   state.measurements[week] ||= {};
 
@@ -1036,15 +821,11 @@ function changeHTML(current, previous, unit) {
   `;
 }
 
-/* WORKOUT LOG */
-
 function saveWorkoutField(key, field, value) {
   state.workoutData[key] ||= {};
   state.workoutData[key][field] = value;
   saveData();
 }
-
-/* PROGRESS */
 
 function renderProgress() {
   app.innerHTML = `
@@ -1181,8 +962,6 @@ function drawChart(canvasId, field) {
   });
 }
 
-/* AFT TRACKER */
-
 function renderAFT() {
   const rows = state.aftTests
     .map((t,i) => `
@@ -1294,15 +1073,11 @@ function deleteAFT(index) {
   renderAFT();
 }
 
-/* RECOVERY MODE */
-
 function toggleRecovery() {
   state.recoveryMode = !state.recoveryMode;
   saveData();
   renderHome();
 }
-
-/* BACKUP / RESTORE */
 
 function renderBackup() {
   app.innerHTML = `
@@ -1339,19 +1114,6 @@ function renderBackup() {
               style="margin-top:10px"
               onclick="importData()">
         Import Backup
-      </button>
-    </section>
-
-    <section class="card">
-      <h2>Reset Program</h2>
-
-      <p>
-        This permanently clears the data saved by FORGE on this device.
-      </p>
-
-      <button class="danger"
-              onclick="resetData()">
-        Reset All Data
       </button>
     </section>
   `;
@@ -1420,8 +1182,6 @@ function resetData() {
   renderHome();
 }
 
-/* TIMER */
-
 let timerSeconds = 60;
 let timerOriginal = 60;
 let timerInterval = null;
@@ -1471,8 +1231,6 @@ function resetTimer() {
   updateTimerDisplay();
 }
 
-/* DRAWER */
-
 function openDrawer() {
   document.getElementById("drawer").classList.add("open");
   document.getElementById("drawerOverlay").classList.add("open");
@@ -1482,8 +1240,6 @@ function closeDrawer() {
   document.getElementById("drawer").classList.remove("open");
   document.getElementById("drawerOverlay").classList.remove("open");
 }
-
-/* EVENTS */
 
 document.getElementById("menuBtn")
   .addEventListener("click",openDrawer);
@@ -1533,14 +1289,10 @@ document.getElementById("timerStart")
 document.getElementById("timerReset")
   .addEventListener("click",resetTimer);
 
-/* SERVICE WORKER */
-
 if ("serviceWorker" in navigator) {
   window.addEventListener("load",() => {
     navigator.serviceWorker.register("./sw.js");
   });
 }
-
-/* START */
 
 renderHome();
