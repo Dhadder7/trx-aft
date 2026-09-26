@@ -276,6 +276,30 @@ function exercise(id, sets, reps, rest, note = "") {
   return { id, sets, reps, rest, note };
 }
 
+const YOGA_BY_DAY = {
+  Tuesday: {
+    time: "EVENING • 8:00 PM",
+    title: "Runner's Yoga",
+    duration: "30 minutes",
+    focus: "Leg and hip mobility after your run",
+    url: "https://www.youtube.com/watch?v=0hTllAb4XGg"
+  },
+  Thursday: {
+    time: "EVENING • 7:00 PM",
+    title: "Yoga for Hips & Lower Back",
+    duration: "23 minutes",
+    focus: "Gentle hip and lower-back mobility",
+    url: "https://www.youtube.com/watch?v=Ho9em79_0qg"
+  },
+  Saturday: {
+    time: "EVENING • 8:00 PM",
+    title: "Bedtime Yoga",
+    duration: "20 minutes",
+    focus: "Gentle full-body stretching after your aerobic day",
+    url: "https://www.youtube.com/watch?v=v7SN-d4qXx0"
+  }
+};
+
 function getWeekPlan(week) {
   const p = strengthPrescription(week);
 
@@ -791,6 +815,24 @@ function openDay(day) {
         </p>
       </section>
       `
+    }
+
+    ${YOGA_BY_DAY[day]
+      ? `
+      <section class="card">
+        <div class="eyebrow">YOGA • ${YOGA_BY_DAY[day].time}</div>
+        <h2>${YOGA_BY_DAY[day].title}</h2>
+        <p>${YOGA_BY_DAY[day].duration} • ${YOGA_BY_DAY[day].focus}</p>
+        <a class="primary"
+           href="${YOGA_BY_DAY[day].url}"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="display:block; text-align:center; text-decoration:none; margin-top:14px;">
+          ▶ Watch yoga video
+        </a>
+      </section>
+      `
+      : ""
     }
 
     <section class="card">
