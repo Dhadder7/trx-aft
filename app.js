@@ -13,6 +13,10 @@ let currentView = "home";
 let selectedWeek = 1;
 let selectedDay = null;
 
+/* ------------------------------
+   EXERCISE LIBRARY
+------------------------------ */
+
 const EX = {
   trxSquat: {"name":"TRX Squat","how":"Face the anchor. Hold the handles with light tension. Sit your hips down and back while keeping your chest tall, then drive through the whole foot to stand.","cues":["Keep knees tracking in the same direction as your toes.","Use the straps for balance, not to pull yourself up.","Keep your ribs stacked over your pelvis.","Progress by using less assistance or moving toward single-leg variations."],"video":"https://www.youtube.com/results?search_query=TRX+Squat+official+exercise"},
   trxChest: {"name":"TRX Chest Press","how":"Face away from the anchor with arms extended. Keep your body straight from head to heel. Bend your elbows and lower your chest between the handles, then press away.","cues":["Brace your abs before every repetition.","Do not allow your hips to sag.","Keep shoulders away from your ears.","Walk your feet farther back to make it easier and farther toward the anchor to make it harder."],"video":"https://www.youtube.com/results?search_query=TRX+Chest+Press+official+exercise"},
@@ -43,6 +47,10 @@ const YOGA = {
   Saturday: {"when":"Evening · well after deadlifts","title":"Gentle bedtime yoga","minutes":10,"video":"https://www.youtube.com/watch?v=CLDHeV9OI5U","note":"Keep this gentle after lifting; skip any pose that strains your back."},
   Sunday: {"when":"Optional · whenever convenient","title":"Full-body flexibility","minutes":16,"video":"https://www.youtube.com/watch?v=Yzm3fA2HhkQ","note":"Optional relaxed practice on your rest day."}
 };
+
+/* ------------------------------
+   12-WEEK PROGRAM
+------------------------------ */
 
 function phaseForWeek(w) {
   if (w <= 4) return "FOUNDATION";
@@ -194,6 +202,10 @@ function getWeekPlan(week) {
   };
 }
 
+/* ------------------------------
+   STORAGE
+------------------------------ */
+
 function loadData() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
@@ -215,6 +227,10 @@ function completedKey(week, day, index) {
   return `${workoutKey(week, day)}-${index}`;
 }
 
+/* ------------------------------
+   NAVIGATION
+------------------------------ */
+
 const app = document.getElementById("app");
 
 function navigate(view) {
@@ -225,6 +241,7 @@ function navigate(view) {
   if (view === "weeks") renderWeeks();
   if (view === "progress") renderProgress();
   if (view === "aft") renderAFT();
+  if (view === "nutrition") renderNutrition();
   if (view === "backup") renderBackup();
 
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -528,6 +545,13 @@ function openDay(day) {
 
     ${day === "Saturday" ? deadliftCard(selectedWeek) : ""}
 
+    <section class="card compact nutrition-entry">
+      <div class="eyebrow">FOOD • WEEK ${selectedWeek} • ${day.toUpperCase()}</div>
+      <h2>Meals and macros</h2>
+      <p>Check off meals, adjust portions, and log family dinner or other food.</p>
+      <button class="secondary" onclick="openNutrition(${selectedWeek},'${day}')">Open meal plan →</button>
+    </section>
+
     ${workout.cardio
       ? `
       <section class="card">
@@ -685,6 +709,10 @@ function saveDeadliftWeight(week, id, value) {
   saveData();
 }
 
+/* ------------------------------
+   EXERCISE MODAL
+------------------------------ */
+
 function showExercise(id) {
   const e = EX[id];
 
@@ -719,6 +747,10 @@ function showExercise(id) {
 function closeModal() {
   document.getElementById("modal").classList.add("hidden");
 }
+
+/* ------------------------------
+   COMPLETION
+------------------------------ */
 
 function toggleExercise(week, day, index, checked) {
   state.completed[completedKey(week, day, index)] = checked;
@@ -783,6 +815,10 @@ function totalCompletion() {
   return Math.round(total / 12);
 }
 
+/* ------------------------------
+   MEASUREMENTS
+------------------------------ */
+
 function saveMeasurement(week, field, value) {
   state.measurements[week] ||= {};
 
@@ -821,11 +857,19 @@ function changeHTML(current, previous, unit) {
   `;
 }
 
+/* ------------------------------
+   WORKOUT LOG
+------------------------------ */
+
 function saveWorkoutField(key, field, value) {
   state.workoutData[key] ||= {};
   state.workoutData[key][field] = value;
   saveData();
 }
+
+/* ------------------------------
+   PROGRESS
+------------------------------ */
 
 function renderProgress() {
   app.innerHTML = `
@@ -962,6 +1006,10 @@ function drawChart(canvasId, field) {
   });
 }
 
+/* ------------------------------
+   AFT TRACKER
+------------------------------ */
+
 function renderAFT() {
   const rows = state.aftTests
     .map((t,i) => `
@@ -1073,11 +1121,19 @@ function deleteAFT(index) {
   renderAFT();
 }
 
+/* ------------------------------
+   RECOVERY MODE
+------------------------------ */
+
 function toggleRecovery() {
   state.recoveryMode = !state.recoveryMode;
   saveData();
   renderHome();
 }
+
+/* ------------------------------
+   BACKUP / RESTORE
+------------------------------ */
 
 function renderBackup() {
   app.innerHTML = `
@@ -1091,7 +1147,7 @@ function renderBackup() {
 
       <p>
         Downloads a copy of your measurements, workout history,
-        completion status and AFT tests.
+        completion status, AFT tests, meal logs and shopping checks.
       </p>
 
       <button class="primary" onclick="exportData()">
@@ -1114,6 +1170,19 @@ function renderBackup() {
               style="margin-top:10px"
               onclick="importData()">
         Import Backup
+      </button>
+    </section>
+
+    <section class="card">
+      <h2>Reset Program</h2>
+
+      <p>
+        This permanently clears the data saved by FORGE on this device.
+      </p>
+
+      <button class="danger"
+              onclick="resetData()">
+        Reset All Data
       </button>
     </section>
   `;
@@ -1182,6 +1251,10 @@ function resetData() {
   renderHome();
 }
 
+/* ------------------------------
+   TIMER
+------------------------------ */
+
 let timerSeconds = 60;
 let timerOriginal = 60;
 let timerInterval = null;
@@ -1231,6 +1304,10 @@ function resetTimer() {
   updateTimerDisplay();
 }
 
+/* ------------------------------
+   DRAWER
+------------------------------ */
+
 function openDrawer() {
   document.getElementById("drawer").classList.add("open");
   document.getElementById("drawerOverlay").classList.add("open");
@@ -1240,6 +1317,10 @@ function closeDrawer() {
   document.getElementById("drawer").classList.remove("open");
   document.getElementById("drawerOverlay").classList.remove("open");
 }
+
+/* ------------------------------
+   EVENTS
+------------------------------ */
 
 document.getElementById("menuBtn")
   .addEventListener("click",openDrawer);
@@ -1289,10 +1370,18 @@ document.getElementById("timerStart")
 document.getElementById("timerReset")
   .addEventListener("click",resetTimer);
 
+/* ------------------------------
+   SERVICE WORKER
+------------------------------ */
+
 if ("serviceWorker" in navigator) {
   window.addEventListener("load",() => {
     navigator.serviceWorker.register("./sw.js");
   });
 }
+
+/* ------------------------------
+   START
+------------------------------ */
 
 renderHome();
