@@ -15,6 +15,9 @@ const FOOD = {
   peppers: {name:"Bell peppers, chopped",unit:"cup",aisle:"Produce",kcal:30,p:1,c:7,f:0},
   carrots: {name:"Baby carrots",unit:"cup",aisle:"Produce",kcal:50,p:1,c:12,f:0},
   tomatoes: {name:"Cherry tomatoes",unit:"cup",aisle:"Produce",kcal:27,p:1,c:6,f:0},
+  garlic: {name:"Garlic",unit:"clove",aisle:"Produce",kcal:4,p:0,c:1,f:0},
+  lemon: {name:"Lemon",unit:"medium",aisle:"Produce",kcal:17,p:0,c:5,f:0},
+  lime: {name:"Lime",unit:"medium",aisle:"Produce",kcal:20,p:0,c:7,f:0},
   chicken: {name:"Chicken breast tenderloins, cooked",unit:"oz cooked",aisle:"Meat & seafood",kcal:47,p:9,c:0,f:1},
   tilapia: {name:"Tilapia, cooked",unit:"oz cooked",aisle:"Meat & seafood",kcal:36,p:7,c:0,f:1},
   salmon: {name:"Salmon, cooked",unit:"oz cooked",aisle:"Meat & seafood",kcal:59,p:7,c:0,f:3.5},
@@ -26,23 +29,30 @@ const FOOD = {
   whey: {name:"Jim Stoppani whey powder (check your tub)",unit:"scoop",aisle:"Pantry & supplements",kcal:120,p:24,c:3,f:2},
   walnuts: {name:"Plain unsalted walnuts",unit:"oz",aisle:"Pantry & supplements",kcal:185,p:4,c:4,f:18},
   honey: {name:"Honey",unit:"tsp",aisle:"Pantry & supplements",kcal:21,p:0,c:6,f:0},
-  oil: {name:"Extra-virgin olive oil",unit:"tsp",aisle:"Pantry & supplements",kcal:40,p:0,c:0,f:4.5}
+  oil: {name:"Extra-virgin olive oil",unit:"tsp",aisle:"Pantry & supplements",kcal:40,p:0,c:0,f:4.5},
+  cinnamon: {name:"Ground cinnamon",unit:"tsp",aisle:"Spices & seasonings",kcal:6,p:0,c:2,f:0},
+  paprika: {name:"Smoked paprika",unit:"tsp",aisle:"Spices & seasonings",kcal:6,p:0,c:1,f:0},
+  cumin: {name:"Ground cumin",unit:"tsp",aisle:"Spices & seasonings",kcal:8,p:0,c:1,f:0},
+  italian: {name:"Salt-free Italian herb blend",unit:"tsp",aisle:"Spices & seasonings",kcal:2,p:0,c:0,f:0},
+  dill: {name:"Dried dill",unit:"tsp",aisle:"Spices & seasonings",kcal:0,p:0,c:0,f:0},
+  rosemary: {name:"Dried rosemary",unit:"tsp",aisle:"Spices & seasonings",kcal:0,p:0,c:0,f:0},
+  pepper: {name:"Black pepper",unit:"tsp",aisle:"Spices & seasonings",kcal:0,p:0,c:0,f:0}
 };
 const RECIPES = {
-  bagelEgg: {name:"Avocado bagel, eggs & blueberries",items:[["bagel",1],["avocado",0.5],["egg",2],["blueberries",0.5]],steps:"Toast the bagel. Mash half an avocado onto it. Serve with two boiled eggs and blueberries."},
-  bagelCottage: {name:"Avocado bagel, cottage cheese & fruit",items:[["bagel",1],["avocado",0.5],["cottage",0.75],["apple",1]],steps:"Toast the bagel and top with avocado. Serve cottage cheese and a sliced apple on the side."},
-  yogurtBowl: {name:"Greek yogurt, honey, berries & walnuts",items:[["yogurt",1],["honey",2],["blueberries",0.75],["walnuts",0.5]],steps:"Spoon yogurt into a bowl. Add measured honey, blueberries and chopped walnuts."},
+  bagelEgg: {name:"Avocado bagel, eggs & blueberries",items:[["bagel",1],["avocado",0.5],["egg",2],["blueberries",0.5],["lemon",0.25],["pepper",0.125]],steps:"Toast the bagel. Mash avocado with a squeeze of lemon and black pepper; spread onto the bagel. Serve with two boiled eggs and blueberries."},
+  bagelCottage: {name:"Avocado bagel, cottage cheese & fruit",items:[["bagel",1],["avocado",0.5],["cottage",0.75],["apple",1],["lemon",0.25],["pepper",0.125]],steps:"Toast the bagel and top with avocado mashed with lemon juice and black pepper. Serve cottage cheese and a sliced apple on the side."},
+  yogurtBowl: {name:"Greek yogurt, honey, berries & walnuts",items:[["yogurt",1],["honey",2],["blueberries",0.75],["walnuts",0.5],["cinnamon",0.25]],steps:"Spoon yogurt into a bowl. Add measured honey, blueberries, chopped walnuts and a sprinkle of cinnamon."},
   cottageSnack: {name:"Cottage cheese, grapes & walnuts",items:[["cottage",0.75],["grapes",1],["walnuts",0.5]],steps:"Portion cottage cheese and grapes. Add walnuts just before eating."},
   eggSnack: {name:"Boiled eggs, apple & carrots",items:[["egg",2],["apple",1],["carrots",1]],steps:"Hard-boil eggs ahead of time. Pack with a washed apple and baby carrots."},
   shake: {name:"Whey shake in 2% milk",items:[["whey",1],["milk",1]],steps:"Blend or shake one scoop of your actual Stoppani whey with 1 cup cold 2% milk. Check the tub label and adjust the logged values if needed."},
-  chickenRice: {name:"Chicken, brown rice & kale bowl",items:[["chicken",5],["rice",1],["kale",1],["peppers",0.5],["tomatoes",0.5],["oil",2]],steps:"Cook chicken to 165°F. Sauté kale and peppers in measured olive oil; add tomatoes. Serve with a cup of cooked rice."},
-  chickenPotato: {name:"Chicken, golden potatoes & broccoli",items:[["chicken",5],["potato",2],["broccoli",1.5],["oil",2]],steps:"Roast diced potatoes and broccoli with measured olive oil at 425°F until tender. Cook chicken to 165°F and serve together."},
-  salmonRice: {name:"Salmon, brown rice & broccoli",items:[["salmon",5],["rice",1],["broccoli",1.5],["oil",1]],steps:"Bake salmon to 145°F or until it flakes and reaches your preferred safe doneness. Steam broccoli; serve with cooked rice and measured oil."},
-  salmonPotato: {name:"Salmon, potatoes & kale",items:[["salmon",5],["potato",2],["kale",1.5],["oil",1]],steps:"Roast potatoes; cook salmon. Sauté kale in a teaspoon of olive oil. Season with herbs, lemon or pepper as desired."},
-  tilapiaRice: {name:"Tilapia, brown rice & peppers",items:[["tilapia",6],["rice",1.25],["peppers",1],["kale",1],["oil",2]],steps:"Cook tilapia to 145°F. Sauté peppers and kale with measured olive oil; serve over brown rice."},
-  steakPotato: {name:"Top sirloin, potatoes & broccoli",items:[["steak",5],["potato",2],["broccoli",1.5],["oil",1]],steps:"Trim top sirloin and cook to your preferred safe temperature. Roast potatoes and broccoli with a measured teaspoon of oil."},
-  pastaChicken: {name:"Family pasta + grilled chicken",items:[["pasta",1.5],["chicken",5],["tomatoes",0.5],["kale",1],["oil",1]],steps:"Measure 1½ cups cooked pasta. Add 5 oz cooked chicken and vegetables. Sauce, cheese and extra oil are not included: log them separately from their labels."},
-  familyFish: {name:"Family plate + tilapia",items:[["tilapia",6],["rice",1],["broccoli",1.5],["oil",1]],steps:"Use this as a simple placeholder on a family dinner night. If the family meal differs, uncheck this dinner and log the actual plate in Other food."}
+  chickenRice: {name:"Lemon-garlic chicken rice bowl",items:[["chicken",5],["rice",1],["kale",1],["peppers",0.5],["tomatoes",0.5],["oil",2],["garlic",1],["lemon",0.5],["italian",0.5],["pepper",0.125]],steps:"Season chicken with garlic, Italian herbs, lemon zest and black pepper. Cook chicken to 165°F. Sauté kale and peppers in the measured oil, add tomatoes and a squeeze of lemon, then serve over rice. Add salt only to taste."},
+  chickenPotato: {name:"Smoky chicken, potatoes & broccoli",items:[["chicken",5],["potato",2],["broccoli",1.5],["oil",2],["paprika",0.5],["garlic",1],["pepper",0.125]],steps:"Toss diced potatoes and broccoli with measured oil, smoked paprika, minced garlic and pepper. Roast at 425°F until tender. Rub chicken with the same seasonings and cook to 165°F. Add salt to taste if needed."},
+  salmonRice: {name:"Lemon-dill salmon, rice & broccoli",items:[["salmon",5],["rice",1],["broccoli",1.5],["oil",1],["lemon",0.5],["dill",0.5],["garlic",1],["pepper",0.125]],steps:"Brush salmon with measured oil; add dill, minced garlic, lemon zest and black pepper. Cook to 145°F. Steam broccoli and finish fish and vegetables with lemon juice; serve with rice."},
+  salmonPotato: {name:"Lemon-herb salmon, potatoes & kale",items:[["salmon",5],["potato",2],["kale",1.5],["oil",1],["lemon",0.5],["italian",0.5],["garlic",1],["pepper",0.125]],steps:"Roast potatoes with Italian herbs and pepper. Rub salmon with garlic and lemon zest; cook to 145°F. Sauté kale in the measured oil and finish with lemon juice."},
+  tilapiaRice: {name:"Smoky lime tilapia rice bowl",items:[["tilapia",6],["rice",1.25],["peppers",1],["kale",1],["oil",2],["lime",0.5],["paprika",0.5],["cumin",0.25],["garlic",1]],steps:"Rub tilapia with smoked paprika, cumin and minced garlic. Cook to 145°F and finish with lime juice. Sauté peppers and kale in measured oil and serve with brown rice."},
+  steakPotato: {name:"Garlic-rosemary top sirloin & potatoes",items:[["steak",5],["potato",2],["broccoli",1.5],["oil",1],["garlic",1],["rosemary",0.5],["pepper",0.25]],steps:"Pat trimmed top sirloin dry; season with minced garlic, rosemary and black pepper. Sear or grill to your preferred safe temperature and rest before slicing. Roast potatoes and broccoli with the measured oil."},
+  pastaChicken: {name:"Family pasta + Italian-herb chicken",items:[["pasta",1.5],["chicken",5],["tomatoes",0.5],["kale",1],["oil",1],["garlic",1],["italian",0.5],["pepper",0.125]],steps:"Season chicken with garlic, Italian herbs and pepper; cook to 165°F. Sauté kale and tomatoes in measured oil. Serve over 1½ cups cooked pasta. Log sauce, cheese or extra oil separately from their labels."},
+  familyFish: {name:"Family plate + lemon-dill tilapia",items:[["tilapia",6],["rice",1],["broccoli",1.5],["oil",1],["lemon",0.5],["dill",0.5],["pepper",0.125]],steps:"Season tilapia with dill, lemon zest and pepper; cook to 145°F. Serve with broccoli and rice, finishing with lemon juice. If the family meal differs, uncheck this dinner and log the actual plate in Other food."}
 };
 const MEAL_PLAN = {
   Monday:["bagelEgg","chickenRice","yogurtBowl","shake","salmonPotato"],
@@ -144,3 +154,4 @@ function groceryHTML(w){
 }
 function toggleGrocery(w,key,checked){state.grocery||={};state.grocery[w]||={};state.grocery[w][key]=checked;saveData();}
 function printGrocery(){window.print();}
+
