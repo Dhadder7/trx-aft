@@ -256,100 +256,316 @@ const EX = {
 };
 
 /* ------------------------------
-   YOGA LIBRARY
+   SKIN CARE
 ------------------------------ */
 
-const YOGA = {
-  Monday: {
-    name: "Post-Workout Recovery Flow",
-    duration: "10–15 min",
-    timing: "After Strength A or later that evening",
-    purpose: "Downshift after lifting, restore hip and thoracic mobility, and keep the session recovery-focused.",
-    video: "https://www.youtube.com/results?search_query=Yoga+With+Adriene+10+minute+post+workout+yoga"
-  },
+const SKINCARE = {
+  morning: [
+    {
+      id: "cleanse-am",
+      name: "Gentle Facial Cleanser",
+      image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=240&q=80",
+      how: "Wet your face with lukewarm water. Massage a small amount of gentle cleanser over the face for about 20–30 seconds, then rinse and gently pat dry. Do not scrub.",
+      video: "https://www.youtube.com/results?search_query=dermatologist+how+to+wash+face+gentle+cleanser"
+    },
+    {
+      id: "vitamin-c",
+      name: "Timeless 20% Vitamin C + E Ferulic Acid Serum",
+      image: "https://www.timelessha.com/cdn/shop/files/20_Vitamin_C_E_Ferulic_Acid_Serum_1oz.jpg?v=1741369927&width=360",
+      how: "Apply a thin, even layer to clean, dry skin. Spread gently across the face rather than concentrating it beneath the eyes. Keep it off the eyelids and stop using it on any area that stings or becomes irritated.",
+      video: "https://www.youtube.com/results?search_query=Timeless+20%25+Vitamin+C+E+Ferulic+how+to+apply"
+    },
+    {
+      id: "caffeine-am",
+      name: "The Ordinary Caffeine Solution 5% + EGCG",
+      image: "https://theordinary.com/on/demandware.static/-/Sites-deciem-master-catalog/default/dw58dd7509/Images/products/The%20Ordinary/rdn-caffeine-solution-5pct-egcg-30ml.png",
+      how: "Optional for temporary help with the appearance of puffiness. Use one small drop for each eye and gently tap along the orbital bone with a fingertip. Do not rub outward repeatedly or apply directly into the eyes.",
+      video: "https://www.youtube.com/results?search_query=The+Ordinary+Caffeine+Solution+5%25+EGCG+how+to+apply"
+    },
+    {
+      id: "moisturizer-am",
+      name: "La Roche-Posay Toleriane Double Repair Face Moisturizer",
+      image: "https://www.laroche-posay.us/dw/image/v2/AAFM_PRD/on/demandware.static/-/Sites-lrp-master-catalog/default/dw772c5531/img/3337875545792_Toleriane_Double_Repair_Face_Moisturizer_75ml.jpg",
+      how: "Apply a thin, even layer over the face and neck. Be gentle around the eye area. Moisturizer helps support the skin barrier and can reduce the dry look that makes fine lines more noticeable.",
+      video: "https://www.youtube.com/results?search_query=La+Roche+Posay+Toleriane+Double+Repair+how+to+apply"
+    },
+    {
+      id: "sunscreen-am",
+      name: "Broad-Spectrum Sunscreen SPF 30–50+",
+      image: "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=240&q=80",
+      how: "Finish every morning with broad-spectrum SPF 30 or higher over the entire face, ears and exposed neck. Apply it evenly rather than protecting only the eye area. Reapply when outdoors for extended periods, especially after sweating.",
+      video: "https://www.youtube.com/results?search_query=American+Academy+Dermatology+how+to+apply+sunscreen+face"
+    }
+  ],
 
-  Tuesday: {
-    name: "Runner Mobility Flow",
-    duration: "15–20 min",
-    timing: "After the run or later that day",
-    purpose: "Open calves, hamstrings, hip flexors, glutes and the lower back after run intervals.",
-    video: "https://www.youtube.com/results?search_query=Yoga+With+Adriene+yoga+for+runners"
-  },
+  nightRetinal: [
+    {
+      id: "cleanse-pm-r",
+      name: "Gentle Facial Cleanser",
+      image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=240&q=80",
+      how: "Wash with lukewarm water and a gentle cleanser. Pat dry rather than rubbing. If your skin is easily irritated, allow it to dry fully before the retinal step.",
+      video: "https://www.youtube.com/results?search_query=dermatologist+how+to+wash+face+gentle+cleanser"
+    },
+    {
+      id: "retinal-pm",
+      name: "The Ordinary Retinal 0.2% Emulsion",
+      image: "https://theordinary.com/on/demandware.static/-/Sites-deciem-master-catalog/default/dw7338b72f/Images/products/The%20Ordinary/rdn-retinal-02-emulsion-15ml.png",
+      how: "Use a small amount for the whole face at night. Apply a thin layer and keep it away from the eyelids, corners of the nose and lips, and the immediate under-eye area for now. Do not combine this routine with your Granactive Retinoid. Reduce frequency if you develop persistent dryness, burning, peeling or redness.",
+      video: "https://www.youtube.com/results?search_query=The+Ordinary+Retinal+0.2%25+Emulsion+how+to+use"
+    },
+    {
+      id: "moisturizer-pm-r",
+      name: "La Roche-Posay Toleriane Double Repair Face Moisturizer",
+      image: "https://www.laroche-posay.us/dw/image/v2/AAFM_PRD/on/demandware.static/-/Sites-lrp-master-catalog/default/dw772c5531/img/3337875545792_Toleriane_Double_Repair_Face_Moisturizer_75ml.jpg",
+      how: "Finish with moisturizer over the face and neck. If retinal is drying, you can also use moisturizer before retinal as a buffer, then add another light layer afterward.",
+      video: "https://www.youtube.com/results?search_query=La+Roche+Posay+Toleriane+Double+Repair+how+to+apply"
+    }
+  ],
 
-  Thursday: {
-    name: "Full Recovery Yoga",
-    duration: "20–30 min",
-    timing: "Primary recovery session",
-    purpose: "Use this as your dedicated mobility and recovery session. Keep it easy and avoid turning it into another workout.",
-    video: "https://www.youtube.com/results?search_query=Yoga+With+Adriene+30+minute+full+body+yoga+stretch"
-  },
-
-  Saturday: {
-    name: "Lower-Body Recovery Flow",
-    duration: "15–20 min",
-    timing: "After deadlifts/cardio or later that day",
-    purpose: "Restore hip, hamstring and lower-back mobility after the week's hinge work and aerobic training.",
-    video: "https://www.youtube.com/results?search_query=Yoga+With+Adriene+yoga+for+hips+hamstrings+lower+back"
-  },
-
-  Sunday: {
-    name: "Gentle Rest-Day Yoga",
-    duration: "15–20 min",
-    timing: "Optional",
-    purpose: "Easy movement only. The goal is to feel better afterward, not to create fatigue.",
-    video: "https://www.youtube.com/results?search_query=Yoga+With+Adriene+gentle+yoga+stretch+rest+day"
-  }
+  nightRecovery: [
+    {
+      id: "cleanse-pm-rec",
+      name: "Gentle Facial Cleanser",
+      image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=240&q=80",
+      how: "Wash gently with lukewarm water, rinse thoroughly and pat dry. Avoid scrubbing or exfoliating the lighter-looking under-eye and upper-cheek area.",
+      video: "https://www.youtube.com/results?search_query=dermatologist+how+to+wash+face+gentle+cleanser"
+    },
+    {
+      id: "peptide-pm",
+      name: "The Ordinary Multi-Peptide + HA Serum",
+      image: "https://theordinary.com/on/demandware.static/-/Sites-deciem-master-catalog/default/dw2f9d80a8/Images/products/The%20Ordinary/rdn-multi-peptide-ha-serum-30ml.png",
+      how: "Apply a few drops in a thin layer over the face. This is your gentler treatment night between retinal applications.",
+      video: "https://www.youtube.com/results?search_query=The+Ordinary+Multi-Peptide+HA+Serum+how+to+use"
+    },
+    {
+      id: "moisturizer-pm-rec",
+      name: "La Roche-Posay Toleriane Double Repair Face Moisturizer",
+      image: "https://www.laroche-posay.us/dw/image/v2/AAFM_PRD/on/demandware.static/-/Sites-lrp-master-catalog/default/dw772c5531/img/3337875545792_Toleriane_Double_Repair_Face_Moisturizer_75ml.jpg",
+      how: "Apply evenly over the face and neck, including a light layer beneath the eyes if it does not sting. On recovery nights the priority is hydration and keeping the skin barrier comfortable.",
+      video: "https://www.youtube.com/results?search_query=La+Roche+Posay+Toleriane+Double+Repair+how+to+apply"
+    }
+  ]
 };
 
+function skinDateKey() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function skinCheckKey(routine, id) {
+  return `${skinDateKey()}-${routine}-${id}`;
+}
+
+function toggleSkinStep(routine, id, checked) {
+  state.skincareCompleted ||= {};
+  state.skincareCompleted[skinCheckKey(routine, id)] = checked;
+  saveData();
+}
+
+function skinRoutineHTML(title, subtitle, routine, items) {
+  const rows = items.map(item => {
+    const checked =
+      state.skincareCompleted?.[skinCheckKey(routine, item.id)]
+        ? "checked"
+        : "";
+
+    return `
+      <div class="exercise" style="align-items:flex-start">
+        <input
+          class="exercise-check"
+          type="checkbox"
+          ${checked}
+          onchange="toggleSkinStep('${routine}','${item.id}',this.checked)"
+        >
+
+        <img
+          src="${item.image}"
+          alt="${item.name}"
+          loading="lazy"
+          style="width:64px;height:64px;border-radius:12px;object-fit:contain;background:#fff;padding:4px;flex-shrink:0"
+          onerror="this.style.display='none'"
+        >
+
+        <div style="flex:1;min-width:0">
+          <strong style="display:block;margin-bottom:6px">
+            ${item.name}
+          </strong>
+
+          <span style="display:block;color:var(--muted);line-height:1.45">
+            ${item.how}
+          </span>
+
+          <a
+            href="${item.video}"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="display:inline-block;margin-top:10px;text-decoration:none"
+          >
+            <button class="secondary" type="button">
+              ▶ Video demonstration
+            </button>
+          </a>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  return `
+    <section class="card">
+      <div class="eyebrow">${subtitle}</div>
+      <h2>${title}</h2>
+      ${rows}
+    </section>
+  `;
+}
+
+function renderSkincare() {
+  app.innerHTML = `
+    <section class="hero">
+      <div class="eyebrow">DAILY CARE</div>
+      <h1>Skin Care</h1>
+      <p>
+        Simple, consistent care for tone, texture, hydration and healthy aging.
+      </p>
+    </section>
+
+    <div class="callout">
+      Because you noticed a lighter-looking strip beneath and outward from your eyes,
+      avoid concentrating vitamin C, retinal or other brightening products there for now.
+      Apply products gently and evenly rather than repeatedly rubbing outward.
+    </div>
+
+    ${skinRoutineHTML(
+      "Morning Routine",
+      "AM • EVERY DAY",
+      "morning",
+      SKINCARE.morning
+    )}
+
+    ${skinRoutineHTML(
+      "Retinal Night",
+      "PM • TREATMENT NIGHT",
+      "nightRetinal",
+      SKINCARE.nightRetinal
+    )}
+
+    ${skinRoutineHTML(
+      "Recovery / Peptide Night",
+      "PM • BETWEEN RETINAL NIGHTS",
+      "nightRecovery",
+      SKINCARE.nightRecovery
+    )}
+
+    <section class="card">
+      <div class="eyebrow">HOW TO ROTATE</div>
+      <h2>Keep the routine gentle.</h2>
+
+      <p>
+        Use the morning routine daily. At night, alternate retinal nights with
+        recovery/peptide nights based on how your skin tolerates retinal. If your
+        skin becomes persistently red, painful, itchy, very dry, peeling or burning,
+        stop the irritating active and use gentle cleanser, moisturizer and daytime
+        sunscreen while your skin settles.
+      </p>
+    </section>
+  `;
+}
 /* ------------------------------
    12-WEEK PROGRAM
 ------------------------------ */
 
-function phaseForWeek(w) {
-  if (w <= 4) return "FOUNDATION";
-  if (w <= 8) return "BUILD";
+function phaseForWeek(week) {
+  if (week <= 4) return "FOUNDATION";
+  if (week <= 8) return "BUILD";
   return "PERFORMANCE";
 }
 
 function strengthPrescription(week) {
-  if (week <= 2) return { sets: 3, reps: "10–12", rest: "75–90 sec" };
-  if (week <= 4) return { sets: 3, reps: "12–15", rest: "60–90 sec" };
-  if (week <= 6) return { sets: 4, reps: "8–12", rest: "75–90 sec" };
-  if (week <= 8) return { sets: 4, reps: "10–15", rest: "60–90 sec" };
-  return { sets: 4, reps: "8–15", rest: "60–90 sec" };
+  if (week <= 2) {
+    return {
+      sets: 3,
+      reps: "10–12",
+      rest: "75–90 sec"
+    };
+  }
+
+  if (week <= 4) {
+    return {
+      sets: 3,
+      reps: "12–15",
+      rest: "60–90 sec"
+    };
+  }
+
+  if (week <= 6) {
+    return {
+      sets: 4,
+      reps: "8–12",
+      rest: "75–90 sec"
+    };
+  }
+
+  if (week <= 8) {
+    return {
+      sets: 4,
+      reps: "10–15",
+      rest: "60–90 sec"
+    };
+  }
+
+  return {
+    sets: 4,
+    reps: "8–15",
+    rest: "60–90 sec"
+  };
 }
 
 function exercise(id, sets, reps, rest, note = "") {
-  return { id, sets, reps, rest, note };
+  return {
+    id,
+    sets,
+    reps,
+    rest,
+    note
+  };
 }
 
 function getWeekPlan(week) {
   const p = strengthPrescription(week);
 
   const harderLeg =
-    week <= 4 ? "reverseLunge" :
-    week <= 8 ? "splitSquat" :
-    "singleSquat";
+    week <= 4
+      ? "reverseLunge"
+      : week <= 8
+        ? "splitSquat"
+        : "singleSquat";
 
   const hinge =
-    week <= 4 ? "bstanceRDL" :
-    "singleRDL";
+    week <= 4
+      ? "bstanceRDL"
+      : "singleRDL";
 
   const plankTime =
-    week <= 2 ? "30 sec" :
-    week <= 4 ? "40 sec" :
-    week <= 6 ? "50 sec" :
-    week <= 8 ? "60 sec" :
-    "60–75 sec";
+    week <= 2
+      ? "30 sec"
+      : week <= 4
+        ? "40 sec"
+        : week <= 6
+          ? "50 sec"
+          : week <= 8
+            ? "60 sec"
+            : "60–75 sec";
 
   const swingSets =
-    week <= 2 ? 3 :
-    week <= 6 ? 4 :
-    5;
+    week <= 2
+      ? 3
+      : week <= 6
+        ? 4
+        : 5;
 
   const swingReps =
-    week <= 4 ? "12–15" :
-    "15–20";
+    week <= 4
+      ? "12–15"
+      : "15–20";
 
   const runPlan = [
     "30 sec run / 2:30 walk × 8",
@@ -390,9 +606,24 @@ function getWeekPlan(week) {
         exercise("trxSquat", p.sets, p.reps, p.rest),
         exercise("trxChest", p.sets, p.reps, p.rest),
         exercise("trxRow", p.sets, p.reps, p.rest),
-        exercise(harderLeg, 3, "8–12 / leg", "75 sec"),
-        exercise("triceps", 3, "10–15", "60 sec"),
-        exercise("plank", 3, plankTime, "60 sec")
+        exercise(
+          harderLeg,
+          3,
+          "8–12 / leg",
+          "75 sec"
+        ),
+        exercise(
+          "triceps",
+          3,
+          "10–15",
+          "60 sec"
+        ),
+        exercise(
+          "plank",
+          3,
+          plankTime,
+          "60 sec"
+        )
       ]
     },
 
@@ -402,11 +633,26 @@ function getWeekPlan(week) {
       type: "cardio",
       cardio: runPlan,
       exercises: [
-        exercise("pushup", 3,
-          week <= 4 ? "5–10" : "8–15",
-          "60–90 sec"),
-        exercise("fallout", 3, "8–12", "60 sec"),
-        exercise("plank", 3, plankTime, "60 sec")
+        exercise(
+          "pushup",
+          3,
+          week <= 4
+            ? "5–10"
+            : "8–15",
+          "60–90 sec"
+        ),
+        exercise(
+          "fallout",
+          3,
+          "8–12",
+          "60 sec"
+        ),
+        exercise(
+          "plank",
+          3,
+          plankTime,
+          "60 sec"
+        )
       ]
     },
 
@@ -415,13 +661,43 @@ function getWeekPlan(week) {
       subtitle: "Pull • Posterior Chain",
       type: "strength",
       exercises: [
-        exercise("trxRow", p.sets, p.reps, p.rest),
-        exercise(hinge, 4, "10–15 / leg", "75 sec",
-          "Use a slow 3-second lowering phase."),
-        exercise("hamCurl", 3, "10–15", "75 sec"),
-        exercise("hipPress", 3, "12–15", "60 sec"),
-        exercise("yfly", 3, "8–12", "60 sec"),
-        exercise("trxPlank", 3, plankTime, "60 sec")
+        exercise(
+          "trxRow",
+          p.sets,
+          p.reps,
+          p.rest
+        ),
+        exercise(
+          hinge,
+          4,
+          "10–15 / leg",
+          "75 sec",
+          "Use a slow 3-second lowering phase."
+        ),
+        exercise(
+          "hamCurl",
+          3,
+          "10–15",
+          "75 sec"
+        ),
+        exercise(
+          "hipPress",
+          3,
+          "12–15",
+          "60 sec"
+        ),
+        exercise(
+          "yfly",
+          3,
+          "8–12",
+          "60 sec"
+        ),
+        exercise(
+          "trxPlank",
+          3,
+          plankTime,
+          "60 sec"
+        )
       ]
     },
 
@@ -438,12 +714,42 @@ function getWeekPlan(week) {
       subtitle: "TRX • KB • Conditioning",
       type: "strength",
       exercises: [
-        exercise("swing", swingSets, swingReps, "60–90 sec"),
-        exercise("sprinter", 3, "10 / leg", "60 sec"),
-        exercise("trxChest", 3, "10–15", "60 sec"),
-        exercise("trxRow", 3, "10–15", "60 sec"),
-        exercise(harderLeg, 3, "8–12 / leg", "60 sec"),
-        exercise("mountain", 3, "20 total", "60 sec")
+        exercise(
+          "swing",
+          swingSets,
+          swingReps,
+          "60–90 sec"
+        ),
+        exercise(
+          "sprinter",
+          3,
+          "10 / leg",
+          "60 sec"
+        ),
+        exercise(
+          "trxChest",
+          3,
+          "10–15",
+          "60 sec"
+        ),
+        exercise(
+          "trxRow",
+          3,
+          "10–15",
+          "60 sec"
+        ),
+        exercise(
+          harderLeg,
+          3,
+          "8–12 / leg",
+          "60 sec"
+        ),
+        exercise(
+          "mountain",
+          3,
+          "20 total",
+          "60 sec"
+        )
       ]
     },
 
@@ -463,531 +769,1013 @@ function getWeekPlan(week) {
     }
   };
 }
+
+
 /* ------------------------------
    STORAGE
 ------------------------------ */
 
 function loadData() {
   try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    return { ...defaultData, ...(saved || {}) };
+    const saved =
+      JSON.parse(
+        localStorage.getItem(STORAGE_KEY)
+      );
+
+    return {
+      ...defaultData,
+      ...(saved || {}),
+      measurements:
+        saved?.measurements || {},
+      completed:
+        saved?.completed || {},
+      workoutData:
+        saved?.workoutData || {},
+      aftTests:
+        Array.isArray(saved?.aftTests)
+          ? saved.aftTests
+          : [],
+      skincareCompleted:
+        saved?.skincareCompleted || {}
+    };
   } catch {
-    return structuredClone(defaultData);
+    return {
+      measurements: {},
+      completed: {},
+      workoutData: {},
+      aftTests: [],
+      recoveryMode: false,
+      skincareCompleted: {}
+    };
   }
 }
 
 function saveData() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(state)
+  );
 }
 
 function workoutKey(week, day) {
   return `w${week}-${day}`;
 }
 
-function completedKey(week, day, index) {
+function completedKey(
+  week,
+  day,
+  index
+) {
   return `${workoutKey(week, day)}-${index}`;
 }
 
+
 /* ------------------------------
-   NAVIGATION
+   APP + NAVIGATION
 ------------------------------ */
 
-const app = document.getElementById("app");
+const app =
+  document.getElementById("app");
 
 function navigate(view) {
   currentView = view;
   closeDrawer();
 
-  if (view === "home") renderHome();
-  if (view === "weeks") renderWeeks();
-  if (view === "progress") renderProgress();
-  if (view === "aft") renderAFT();
-  if (view === "skincare") renderSkincare();
-  if (view === "backup") renderBackup();
+  if (view === "home") {
+    renderHome();
+  }
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (view === "weeks") {
+    renderWeeks();
+  }
+
+  if (view === "progress") {
+    renderProgress();
+  }
+
+  if (view === "aft") {
+    renderAFT();
+  }
+
+  if (view === "nutrition") {
+    if (
+      typeof renderNutrition ===
+      "function"
+    ) {
+      renderNutrition();
+    }
+  }
+
+  if (view === "skincare") {
+    renderSkincare();
+  }
+
+  if (view === "backup") {
+    renderBackup();
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
+
+/* ------------------------------
+   HOME
+------------------------------ */
+
 function renderHome() {
-  const total = totalCompletion();
+  const total =
+    totalCompletion();
 
   app.innerHTML = `
     <section class="hero">
-      <div class="eyebrow">12-WEEK AFT REBUILD</div>
-      <h1>Build the base.<br>Earn the result.</h1>
+      <div class="eyebrow">
+        12-WEEK AFT REBUILD
+      </div>
+
+      <h1>
+        Build the base.<br>
+        Earn the result.
+      </h1>
+
       <p>
         TRX • 15-lb kettlebell • running • mobility
       </p>
     </section>
 
     <section class="card">
-      <div class="eyebrow">PROGRAM STATUS</div>
+      <div class="eyebrow">
+        PROGRAM STATUS
+      </div>
 
       <div class="stat-grid">
         <div class="stat">
-          <span class="stat-label">Complete</span>
-          <span class="stat-value">${total}%</span>
+          <span class="stat-label">
+            Complete
+          </span>
+
+          <span class="stat-value">
+            ${total}%
+          </span>
         </div>
 
         <div class="stat">
-          <span class="stat-label">Equipment</span>
-          <span class="stat-value">TRX</span>
+          <span class="stat-label">
+            Equipment
+          </span>
+
+          <span class="stat-value">
+            TRX
+          </span>
         </div>
 
         <div class="stat">
-          <span class="stat-label">Weeks</span>
-          <span class="stat-value">12</span>
+          <span class="stat-label">
+            Weeks
+          </span>
+
+          <span class="stat-value">
+            12
+          </span>
         </div>
 
         <div class="stat">
-          <span class="stat-label">Goal</span>
-          <span class="stat-value">AFT</span>
+          <span class="stat-label">
+            Goal
+          </span>
+
+          <span class="stat-value">
+            AFT
+          </span>
         </div>
       </div>
 
       <div class="progress-track">
-        <div class="progress-fill" style="width:${total}%"></div>
+        <div
+          class="progress-fill"
+          style="width:${total}%"
+        ></div>
       </div>
 
-      <button class="primary" onclick="openWeek(1)">
+      <button
+        class="primary"
+        onclick="openWeek(1)"
+      >
         Open Training Plan
       </button>
     </section>
 
     <section class="card">
-      <div class="eyebrow">TRAINING RULE</div>
-      <h2>Progress difficulty, not junk reps.</h2>
+      <div class="eyebrow">
+        TRAINING RULE
+      </div>
+
+      <h2>
+        Progress difficulty,
+        not junk reps.
+      </h2>
 
       <p>
-        When you can complete the top of the prescribed rep range
-        with clean form and roughly 2–3 good reps still available,
-        make the TRX angle or exercise variation slightly harder.
+        When you can complete the top of the
+        prescribed rep range with clean form
+        and roughly 2–3 good reps still available,
+        make the TRX angle or exercise variation
+        slightly harder.
       </p>
 
       <div class="callout">
-        Your 15-lb kettlebell is useful for rebuilding the hip hinge,
-        unilateral strength and power. It does not replace eventual
-        heavy deadlift-specific training.
+        Your 15-lb kettlebell is useful for rebuilding
+        the hip hinge, unilateral strength and power.
+        It does not replace eventual heavy
+        deadlift-specific training.
       </div>
     </section>
 
     <section class="card">
-      <div class="eyebrow">RECOVERY MODE</div>
-      <h2>Adjust without quitting.</h2>
+      <div class="eyebrow">
+        RECOVERY MODE
+      </div>
+
+      <h2>
+        Adjust without quitting.
+      </h2>
 
       <p>
-        Recovery Mode reduces strength-session volume by approximately
-        one set per exercise. Use it when you need a lighter training day
+        Recovery Mode reduces strength-session
+        volume by approximately one set per exercise.
+        Use it when you need a lighter training day
         rather than forcing a hard session.
       </p>
 
-      <button class="${state.recoveryMode ? "primary" : "secondary"}"
-              onclick="toggleRecovery()">
+      <button
+        class="${
+          state.recoveryMode
+            ? "primary"
+            : "secondary"
+        }"
+        onclick="toggleRecovery()"
+      >
         Recovery Mode:
-        ${state.recoveryMode ? "ON" : "OFF"}
+        ${
+          state.recoveryMode
+            ? "ON"
+            : "OFF"
+        }
       </button>
     </section>
 
     <section class="card">
-      <div class="eyebrow">SAFETY</div>
+      <div class="eyebrow">
+        SKIN CARE
+      </div>
+
+      <h2>
+        Keep the routine consistent.
+      </h2>
 
       <p>
-        This plan is a progressive fitness template, not medical
-        clearance. Stop training and seek appropriate evaluation for
-        chest pain, fainting, severe or unusual shortness of breath,
-        or other concerning symptoms.
+        Track your morning routine,
+        retinal nights and recovery nights.
       </p>
+
+      <button
+        class="secondary"
+        onclick="navigate('skincare')"
+      >
+        Open Skin Care
+      </button>
     </section>
   `;
 }
 
+
+/* ------------------------------
+   WEEKS
+------------------------------ */
+
 function renderWeeks() {
   let html = `
     <section class="hero">
-      <div class="eyebrow">TRAINING PLAN</div>
-      <h1>12 Weeks</h1>
-      <p>Select a week to open its training schedule.</p>
+      <div class="eyebrow">
+        TRAINING PLAN
+      </div>
+
+      <h1>
+        12 Weeks
+      </h1>
+
+      <p>
+        Select a week to open
+        its training schedule.
+      </p>
     </section>
 
     <div class="week-grid">
   `;
 
-  for (let w = 1; w <= 12; w++) {
-    const pct = weekCompletion(w);
+  for (
+    let week = 1;
+    week <= 12;
+    week++
+  ) {
+    const pct =
+      weekCompletion(week);
 
     html += `
-      <button class="week-button"
-              onclick="openWeek(${w})">
+      <button
+        class="week-button"
+        onclick="openWeek(${week})"
+      >
+        <span class="week-number">
+          ${week}
+        </span>
 
-        <span class="week-number">${w}</span>
-
-        <span class="badge">${phaseForWeek(w)}</span>
+        <span class="badge">
+          ${phaseForWeek(week)}
+        </span>
 
         <div class="week-status">
           ${pct}% complete
         </div>
 
         <div class="progress-track">
-          <div class="progress-fill"
-               style="width:${pct}%"></div>
+          <div
+            class="progress-fill"
+            style="width:${pct}%"
+          ></div>
         </div>
       </button>
     `;
   }
 
-  html += `</div>`;
+  html += `
+    </div>
+  `;
 
   app.innerHTML = html;
 }
 
 function openWeek(week) {
   selectedWeek = week;
-  const plan = getWeekPlan(week);
+
+  const plan =
+    getWeekPlan(week);
 
   let days = "";
 
-  Object.entries(plan).forEach(([day, workout]) => {
-    const status = dayStatus(week, day);
+  Object.entries(plan)
+    .forEach(
+      ([day, workout]) => {
+        const status =
+          dayStatus(
+            week,
+            day
+          );
 
-    days += `
-      <button class="day-button"
-              onclick="openDay('${day}')">
+        days += `
+          <button
+            class="day-button"
+            onclick="openDay('${day}')"
+          >
+            <div class="day-info">
+              <strong>
+                ${day}
+              </strong>
 
-        <div class="day-info">
-          <strong>${day}</strong>
-          <span>${workout.title} • ${workout.subtitle}</span>
-        </div>
+              <span>
+                ${workout.title}
+                •
+                ${workout.subtitle}
+              </span>
+            </div>
 
-        <span class="status-dot ${status}"></span>
-      </button>
-    `;
-  });
+            <span
+              class="status-dot ${status}"
+            ></span>
+          </button>
+        `;
+      }
+    );
 
-  const m = state.measurements[week] || {};
-  const previous = state.measurements[week - 1] || {};
+  const m =
+    state.measurements[week] || {};
+
+  const previous =
+    state.measurements[week - 1] || {};
 
   app.innerHTML = `
-    <button class="back" onclick="navigate('weeks')">
+    <button
+      class="back"
+      onclick="navigate('weeks')"
+    >
       ← All Weeks
     </button>
 
     <section class="hero">
-      <div class="eyebrow">${phaseForWeek(week)} PHASE</div>
-      <h1>Week ${week}</h1>
+      <div class="eyebrow">
+        ${phaseForWeek(week)} PHASE
+      </div>
+
+      <h1>
+        Week ${week}
+      </h1>
     </section>
 
     <section class="card">
-      <div class="eyebrow">WEEKLY CHECK-IN</div>
-      <h2>Body Metrics</h2>
+      <div class="eyebrow">
+        WEEKLY CHECK-IN
+      </div>
+
+      <h2>
+        Body Metrics
+      </h2>
 
       <div class="measurement-row">
 
         <div class="field">
-          <label>WEIGHT (LB)</label>
+          <label>
+            WEIGHT (LB)
+          </label>
 
-          <input type="number"
-                 step="0.1"
-                 value="${m.weight ?? ""}"
-                 onchange="saveMeasurement(${week},'weight',this.value)">
+          <input
+            type="number"
+            step="0.1"
+            value="${m.weight ?? ""}"
+            onchange="
+              saveMeasurement(
+                ${week},
+                'weight',
+                this.value
+              )
+            "
+          >
 
-          ${changeHTML(m.weight, previous.weight, "lb")}
+          ${changeHTML(
+            m.weight,
+            previous.weight,
+            "lb"
+          )}
         </div>
 
         <div class="field">
-          <label>WAIST (IN)</label>
+          <label>
+            WAIST (IN)
+          </label>
 
-          <input type="number"
-                 step="0.1"
-                 value="${m.waist ?? ""}"
-                 onchange="saveMeasurement(${week},'waist',this.value)">
+          <input
+            type="number"
+            step="0.1"
+            value="${m.waist ?? ""}"
+            onchange="
+              saveMeasurement(
+                ${week},
+                'waist',
+                this.value
+              )
+            "
+          >
 
-          ${changeHTML(m.waist, previous.waist, "in")}
+          ${changeHTML(
+            m.waist,
+            previous.waist,
+            "in"
+          )}
         </div>
 
       </div>
 
       <div class="progress-track">
-        <div class="progress-fill"
-             style="width:${weekCompletion(week)}%"></div>
+        <div
+          class="progress-fill"
+          style="
+            width:
+            ${weekCompletion(week)}%
+          "
+        ></div>
       </div>
 
-      <small>${weekCompletion(week)}% of scheduled training complete</small>
+      <small>
+        ${weekCompletion(week)}%
+        of scheduled training complete
+      </small>
     </section>
 
     <div class="section-title">
       <div>
-        <div class="eyebrow">SCHEDULE</div>
-        <h2>Training Days</h2>
+        <div class="eyebrow">
+          SCHEDULE
+        </div>
+
+        <h2>
+          Training Days
+        </h2>
       </div>
     </div>
 
     ${days}
   `;
 }
-
 function openDay(day) {
   selectedDay = day;
 
-  const workout = getWeekPlan(selectedWeek)[day];
-  const wk = workoutKey(selectedWeek, day);
+  const workout =
+    getWeekPlan(selectedWeek)[day];
 
-  const saved = state.workoutData[wk] || {};
+  const wk =
+    workoutKey(selectedWeek, day);
+
+  const saved =
+    state.workoutData[wk] || {};
 
   let exercises = "";
 
-  workout.exercises.forEach((item, i) => {
-    const e = EX[item.id];
+  workout.exercises.forEach(
+    (item, index) => {
+      const exerciseInfo =
+        EX[item.id];
 
-    const checked =
-      state.completed[completedKey(selectedWeek, day, i)]
-        ? "checked"
-        : "";
+      const checked =
+        state.completed[
+          completedKey(
+            selectedWeek,
+            day,
+            index
+          )
+        ]
+          ? "checked"
+          : "";
 
-    const adjustedSets =
-      state.recoveryMode && workout.type === "strength"
-        ? Math.max(2, Number(item.sets) - 1)
-        : item.sets;
+      const adjustedSets =
+        state.recoveryMode &&
+        workout.type === "strength"
+          ? Math.max(
+              2,
+              Number(item.sets) - 1
+            )
+          : item.sets;
 
-    exercises += `
-      <div class="exercise">
+      exercises += `
+        <div class="exercise">
 
-        <input class="exercise-check"
-               type="checkbox"
-               ${checked}
-               onchange="toggleExercise(${selectedWeek},
-                                        '${day}',
-                                        ${i},
-                                        this.checked)">
+          <input
+            class="exercise-check"
+            type="checkbox"
+            ${checked}
+            onchange="
+              toggleExercise(
+                ${selectedWeek},
+                '${day}',
+                ${index},
+                this.checked
+              )
+            "
+          >
 
-        <button class="exercise-button"
-                onclick="showExercise('${item.id}')">
+          <button
+            class="exercise-button"
+            onclick="
+              showExercise(
+                '${item.id}'
+              )
+            "
+          >
+            <strong>
+              ${exerciseInfo.name}
+            </strong>
 
-          <strong>${e.name}</strong>
+            <span>
+              ${
+                item.note ||
+                "Tap for instructions & form cues"
+              }
+            </span>
+          </button>
 
-          <span>
-            ${item.note || "Tap for instructions & form cues"}
-          </span>
-        </button>
+          <div class="exercise-prescription">
+            ${adjustedSets}
+            ×
+            ${item.reps}
 
-        <div class="exercise-prescription">
-          ${adjustedSets} × ${item.reps}
-          <br>
-          <span style="color:var(--muted)">
-            ${item.rest}
-          </span>
+            <br>
+
+            <span
+              style="color:var(--muted)"
+            >
+              ${item.rest}
+            </span>
+          </div>
         </div>
-      </div>
-    `;
-  });
+      `;
+    }
+  );
 
   app.innerHTML = `
-    <button class="back"
-            onclick="openWeek(${selectedWeek})">
+    <button
+      class="back"
+      onclick="
+        openWeek(
+          ${selectedWeek}
+        )
+      "
+    >
       ← Week ${selectedWeek}
     </button>
 
     <section class="hero">
       <div class="eyebrow">
-        WEEK ${selectedWeek} • ${day.toUpperCase()}
+        WEEK ${selectedWeek}
+        •
+        ${day.toUpperCase()}
       </div>
 
-      <h1>${workout.title}</h1>
+      <h1>
+        ${workout.title}
+      </h1>
 
-      <p>${workout.subtitle}</p>
+      <p>
+        ${workout.subtitle}
+      </p>
     </section>
 
-    ${state.recoveryMode && workout.type === "strength"
-      ? `
-      <div class="callout warning">
-        Recovery Mode is active. Strength volume has been reduced.
-      </div>
-      `
-      : ""
+    ${
+      state.recoveryMode &&
+      workout.type === "strength"
+        ? `
+          <div class="callout warning">
+            Recovery Mode is active.
+            Strength volume has been reduced.
+          </div>
+        `
+        : ""
     }
 
-    ${workout.cardio
-      ? `
-      <section class="card">
-        <div class="eyebrow">SESSION TARGET</div>
-        <h2>${workout.cardio}</h2>
-      </section>
-      `
-      : ""
+    ${
+      workout.cardio
+        ? `
+          <section class="card">
+            <div class="eyebrow">
+              SESSION TARGET
+            </div>
+
+            <h2>
+              ${workout.cardio}
+            </h2>
+          </section>
+        `
+        : ""
     }
 
-    ${workout.exercises.length
-      ? `
-      <section class="card">
-        <div class="eyebrow">WORKOUT</div>
-        ${exercises}
-      </section>
-      `
-      : `
-      <section class="card">
-        <div class="eyebrow">
-          ${workout.type === "rest" ? "RECOVERY" : "SESSION"}
-        </div>
+    ${
+      workout.exercises.length
+        ? `
+          <section class="card">
+            <div class="eyebrow">
+              WORKOUT
+            </div>
 
-        <h2>${workout.subtitle}</h2>
+            ${exercises}
+          </section>
+        `
+        : `
+          <section class="card">
+            <div class="eyebrow">
+              ${
+                workout.type === "rest"
+                  ? "RECOVERY"
+                  : "SESSION"
+              }
+            </div>
 
-        <p>
-          ${workout.type === "rest"
-            ? "No required training today. Easy walking or gentle mobility is optional."
-            : "Keep this session comfortable. The purpose is recovery and movement quality."
-          }
-        </p>
-      </section>
-      `
+            <h2>
+              ${workout.subtitle}
+            </h2>
+
+            <p>
+              ${
+                workout.type === "rest"
+                  ? "No required training today. Easy walking or gentle mobility is optional."
+                  : "Keep this session comfortable. The purpose is recovery and movement quality."
+              }
+            </p>
+          </section>
+        `
     }
 
     <section class="card">
-      <div class="eyebrow">SESSION LOG</div>
+      <div class="eyebrow">
+        SESSION LOG
+      </div>
 
       <div class="field">
-        <label>RPE — HOW HARD DID THIS FEEL? (1–10)</label>
+        <label>
+          RPE — HOW HARD DID THIS FEEL? (1–10)
+        </label>
 
-        <input type="number"
-               min="1"
-               max="10"
-               value="${saved.rpe ?? ""}"
-               onchange="saveWorkoutField('${wk}','rpe',this.value)">
+        <input
+          type="number"
+          min="1"
+          max="10"
+          value="${saved.rpe ?? ""}"
+          onchange="
+            saveWorkoutField(
+              '${wk}',
+              'rpe',
+              this.value
+            )
+          "
+        >
       </div>
 
       <div class="measurement-row">
 
         <div class="field">
-          <label>CARDIO MINUTES</label>
+          <label>
+            CARDIO MINUTES
+          </label>
 
-          <input type="number"
-                 value="${saved.minutes ?? ""}"
-                 onchange="saveWorkoutField('${wk}','minutes',this.value)">
+          <input
+            type="number"
+            value="${saved.minutes ?? ""}"
+            onchange="
+              saveWorkoutField(
+                '${wk}',
+                'minutes',
+                this.value
+              )
+            "
+          >
         </div>
 
         <div class="field">
-          <label>DISTANCE (MILES)</label>
+          <label>
+            DISTANCE (MILES)
+          </label>
 
-          <input type="number"
-                 step="0.01"
-                 value="${saved.distance ?? ""}"
-                 onchange="saveWorkoutField('${wk}','distance',this.value)">
+          <input
+            type="number"
+            step="0.01"
+            value="${saved.distance ?? ""}"
+            onchange="
+              saveWorkoutField(
+                '${wk}',
+                'distance',
+                this.value
+              )
+            "
+          >
         </div>
 
       </div>
 
       <div class="field">
-        <label>AVERAGE HR — OPTIONAL</label>
+        <label>
+          AVERAGE HR — OPTIONAL
+        </label>
 
-        <input type="number"
-               value="${saved.hr ?? ""}"
-               onchange="saveWorkoutField('${wk}','hr',this.value)">
+        <input
+          type="number"
+          value="${saved.hr ?? ""}"
+          onchange="
+            saveWorkoutField(
+              '${wk}',
+              'hr',
+              this.value
+            )
+          "
+        >
       </div>
 
       <div class="field">
-        <label>NOTES</label>
+        <label>
+          NOTES
+        </label>
 
         <textarea
-          onchange="saveWorkoutField('${wk}','notes',this.value)"
-          placeholder="Energy, breathing, pain, what felt easy/hard...">${saved.notes ?? ""}</textarea>
+          onchange="
+            saveWorkoutField(
+              '${wk}',
+              'notes',
+              this.value
+            )
+          "
+          placeholder="Energy, breathing, pain, what felt easy/hard..."
+        >${saved.notes ?? ""}</textarea>
       </div>
 
-      <button class="primary"
-              onclick="markDayComplete(${selectedWeek},'${day}')">
+      <button
+        class="primary"
+        onclick="
+          markDayComplete(
+            ${selectedWeek},
+            '${day}'
+          )
+        "
+      >
         Mark Day Complete
       </button>
     </section>
   `;
 }
 
+
 /* ------------------------------
    EXERCISE MODAL
 ------------------------------ */
 
 function showExercise(id) {
-  const e = EX[id];
+  const exerciseInfo =
+    EX[id];
 
-  document.getElementById("modalContent").innerHTML = `
+  if (!exerciseInfo) return;
+
+  const modalContent =
+    document.getElementById(
+      "modalContent"
+    );
+
+  const modal =
+    document.getElementById(
+      "modal"
+    );
+
+  if (
+    !modalContent ||
+    !modal
+  ) {
+    return;
+  }
+
+  modalContent.innerHTML = `
     <div class="exercise-detail">
-      <div class="eyebrow">EXERCISE GUIDE</div>
 
-      <h2>${e.name}</h2>
+      <div class="eyebrow">
+        EXERCISE GUIDE
+      </div>
 
-      <p>${e.how}</p>
+      <h2>
+        ${exerciseInfo.name}
+      </h2>
 
-      <h3>Key Pointers</h3>
+      <p>
+        ${exerciseInfo.how}
+      </p>
+
+      <h3>
+        Key Pointers
+      </h3>
 
       <ul class="cue-list">
-        ${e.cues.map(c => `<li>${c}</li>`).join("")}
+        ${
+          exerciseInfo.cues
+            .map(
+              cue =>
+                `<li>${cue}</li>`
+            )
+            .join("")
+        }
       </ul>
 
-      <a href="${e.video}"
-         target="_blank"
-         rel="noopener">
-
-        <button class="primary">
+      <a
+        href="${exerciseInfo.video}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button
+          class="primary"
+          type="button"
+        >
           ▶ Watch Demonstration
         </button>
       </a>
     </div>
   `;
 
-  document.getElementById("modal").classList.remove("hidden");
+  modal.classList.remove(
+    "hidden"
+  );
 }
 
 function closeModal() {
-  document.getElementById("modal").classList.add("hidden");
+  const modal =
+    document.getElementById(
+      "modal"
+    );
+
+  if (modal) {
+    modal.classList.add(
+      "hidden"
+    );
+  }
 }
+
+
 /* ------------------------------
    WORKOUT DATA
 ------------------------------ */
 
-function saveMeasurement(week, field, value) {
+function saveMeasurement(
+  week,
+  field,
+  value
+) {
   if (!state.measurements[week]) {
     state.measurements[week] = {};
   }
 
   state.measurements[week][field] =
-    value === "" ? "" : Number(value);
+    value === ""
+      ? ""
+      : Number(value);
 
   saveData();
 }
 
-function changeHTML(current, previous, unit) {
+function changeHTML(
+  current,
+  previous,
+  unit
+) {
   if (
     current === undefined ||
     current === "" ||
     previous === undefined ||
     previous === ""
   ) {
-    return `<small class="change neutral">Enter weekly</small>`;
+    return `
+      <small class="change neutral">
+        Enter weekly
+      </small>
+    `;
   }
 
   const change =
-    Math.round((Number(current) - Number(previous)) * 10) / 10;
+    Math.round(
+      (
+        Number(current) -
+        Number(previous)
+      ) * 10
+    ) / 10;
 
   if (change === 0) {
-    return `<small class="change neutral">No change</small>`;
+    return `
+      <small class="change neutral">
+        No change
+      </small>
+    `;
   }
 
-  const sign = change > 0 ? "+" : "";
+  const sign =
+    change > 0
+      ? "+"
+      : "";
 
   return `
-    <small class="change ${change < 0 ? "good" : "neutral"}">
-      ${sign}${change} ${unit} from last week
+    <small
+      class="
+        change
+        ${
+          change < 0
+            ? "positive"
+            : "neutral"
+        }
+      "
+    >
+      ${sign}${change}
+      ${unit}
+      from last week
     </small>
   `;
 }
 
-function saveWorkoutField(key, field, value) {
+function saveWorkoutField(
+  key,
+  field,
+  value
+) {
   if (!state.workoutData[key]) {
     state.workoutData[key] = {};
   }
 
-  state.workoutData[key][field] = value;
+  state.workoutData[key][field] =
+    value;
+
   saveData();
 }
 
-function toggleExercise(week, day, index, checked) {
-  const key = completedKey(week, day, index);
+function toggleExercise(
+  week,
+  day,
+  index,
+  checked
+) {
+  const key =
+    completedKey(
+      week,
+      day,
+      index
+    );
 
   if (checked) {
     state.completed[key] = true;
@@ -998,112 +1786,219 @@ function toggleExercise(week, day, index, checked) {
   saveData();
 }
 
-function markDayComplete(week, day) {
-  const workout = getWeekPlan(week)[day];
+function markDayComplete(
+  week,
+  day
+) {
+  const workout =
+    getWeekPlan(week)[day];
 
-  if (workout.exercises.length) {
-    workout.exercises.forEach((_, index) => {
-      state.completed[completedKey(week, day, index)] = true;
-    });
+  if (
+    workout.exercises.length
+  ) {
+    workout.exercises.forEach(
+      (_, index) => {
+        state.completed[
+          completedKey(
+            week,
+            day,
+            index
+          )
+        ] = true;
+      }
+    );
   } else {
-    state.completed[`${workoutKey(week, day)}-day`] = true;
+    state.completed[
+      `${workoutKey(
+        week,
+        day
+      )}-day`
+    ] = true;
   }
 
   saveData();
+
   openDay(day);
 }
 
-function dayStatus(week, day) {
-  const workout = getWeekPlan(week)[day];
+function dayStatus(
+  week,
+  day
+) {
+  const workout =
+    getWeekPlan(week)[day];
 
-  if (!workout) return "red";
-
-  if (!workout.exercises.length) {
-    return state.completed[`${workoutKey(week, day)}-day`]
-      ? "green"
-      : "yellow";
+  if (!workout) {
+    return "";
   }
 
-  const completeCount = workout.exercises.filter((_, index) =>
-    state.completed[completedKey(week, day, index)]
-  ).length;
+  if (
+    !workout.exercises.length
+  ) {
+    return state.completed[
+      `${workoutKey(
+        week,
+        day
+      )}-day`
+    ]
+      ? "complete"
+      : "";
+  }
 
-  if (completeCount === workout.exercises.length) {
-    return "green";
+  const completeCount =
+    workout.exercises
+      .filter(
+        (_, index) =>
+          state.completed[
+            completedKey(
+              week,
+              day,
+              index
+            )
+          ]
+      )
+      .length;
+
+  if (
+    completeCount ===
+    workout.exercises.length
+  ) {
+    return "complete";
   }
 
   if (completeCount > 0) {
-    return "yellow";
+    return "partial";
   }
 
-  return "red";
+  return "";
 }
 
 function weekCompletion(week) {
-  const plan = getWeekPlan(week);
+  const plan =
+    getWeekPlan(week);
 
   let total = 0;
   let complete = 0;
 
-  Object.entries(plan).forEach(([day, workout]) => {
-    if (workout.exercises.length) {
-      workout.exercises.forEach((_, index) => {
-        total++;
+  Object.entries(plan)
+    .forEach(
+      ([day, workout]) => {
+        if (
+          workout.exercises.length
+        ) {
+          workout.exercises.forEach(
+            (_, index) => {
+              total++;
 
-        if (state.completed[completedKey(week, day, index)]) {
-          complete++;
+              if (
+                state.completed[
+                  completedKey(
+                    week,
+                    day,
+                    index
+                  )
+                ]
+              ) {
+                complete++;
+              }
+            }
+          );
+        } else {
+          total++;
+
+          if (
+            state.completed[
+              `${workoutKey(
+                week,
+                day
+              )}-day`
+            ]
+          ) {
+            complete++;
+          }
         }
-      });
-    } else {
-      total++;
-
-      if (state.completed[`${workoutKey(week, day)}-day`]) {
-        complete++;
       }
-    }
-  });
+    );
 
-  if (!total) return 0;
+  if (!total) {
+    return 0;
+  }
 
-  return Math.round((complete / total) * 100);
+  return Math.round(
+    (complete / total) * 100
+  );
 }
 
 function totalCompletion() {
   let total = 0;
   let complete = 0;
 
-  for (let week = 1; week <= 12; week++) {
-    const plan = getWeekPlan(week);
+  for (
+    let week = 1;
+    week <= 12;
+    week++
+  ) {
+    const plan =
+      getWeekPlan(week);
 
-    Object.entries(plan).forEach(([day, workout]) => {
-      if (workout.exercises.length) {
-        workout.exercises.forEach((_, index) => {
-          total++;
+    Object.entries(plan)
+      .forEach(
+        ([day, workout]) => {
+          if (
+            workout.exercises.length
+          ) {
+            workout.exercises.forEach(
+              (_, index) => {
+                total++;
 
-          if (state.completed[completedKey(week, day, index)]) {
-            complete++;
+                if (
+                  state.completed[
+                    completedKey(
+                      week,
+                      day,
+                      index
+                    )
+                  ]
+                ) {
+                  complete++;
+                }
+              }
+            );
+          } else {
+            total++;
+
+            if (
+              state.completed[
+                `${workoutKey(
+                  week,
+                  day
+                )}-day`
+              ]
+            ) {
+              complete++;
+            }
           }
-        });
-      } else {
-        total++;
-
-        if (state.completed[`${workoutKey(week, day)}-day`]) {
-          complete++;
         }
-      }
-    });
+      );
   }
 
-  if (!total) return 0;
+  if (!total) {
+    return 0;
+  }
 
-  return Math.round((complete / total) * 100);
+  return Math.round(
+    (complete / total) * 100
+  );
 }
 
 function toggleRecovery() {
-  state.recoveryMode = !state.recoveryMode;
+  state.recoveryMode =
+    !state.recoveryMode;
+
   saveData();
   renderHome();
 }
+
 
 /* ------------------------------
    PROGRESS
@@ -1113,89 +2008,156 @@ function renderProgress() {
   const weights = [];
   const waists = [];
 
-  for (let week = 1; week <= 12; week++) {
-    const m = state.measurements[week] || {};
+  for (
+    let week = 1;
+    week <= 12;
+    week++
+  ) {
+    const measurement =
+      state.measurements[week] || {};
 
-    if (m.weight !== undefined && m.weight !== "") {
+    if (
+      measurement.weight !== undefined &&
+      measurement.weight !== ""
+    ) {
       weights.push({
         week,
-        value: Number(m.weight)
+        value:
+          Number(
+            measurement.weight
+          )
       });
     }
 
-    if (m.waist !== undefined && m.waist !== "") {
+    if (
+      measurement.waist !== undefined &&
+      measurement.waist !== ""
+    ) {
       waists.push({
         week,
-        value: Number(m.waist)
+        value:
+          Number(
+            measurement.waist
+          )
       });
     }
   }
 
   const latestWeight =
     weights.length
-      ? weights[weights.length - 1].value
+      ? weights[
+          weights.length - 1
+        ].value
       : "—";
 
   const latestWaist =
     waists.length
-      ? waists[waists.length - 1].value
+      ? waists[
+          waists.length - 1
+        ].value
       : "—";
 
   const weightChange =
     weights.length >= 2
       ? Math.round(
-          (weights[weights.length - 1].value - weights[0].value) * 10
+          (
+            weights[
+              weights.length - 1
+            ].value -
+            weights[0].value
+          ) * 10
         ) / 10
       : null;
 
   const waistChange =
     waists.length >= 2
       ? Math.round(
-          (waists[waists.length - 1].value - waists[0].value) * 10
+          (
+            waists[
+              waists.length - 1
+            ].value -
+            waists[0].value
+          ) * 10
         ) / 10
       : null;
 
   app.innerHTML = `
     <section class="hero">
-      <div class="eyebrow">PROGRESS</div>
-      <h1>Track the trend.</h1>
+      <div class="eyebrow">
+        PROGRESS
+      </div>
+
+      <h1>
+        Track the trend.
+      </h1>
+
       <p>
-        Focus on consistency across the full 12 weeks rather than
-        reacting to a single weigh-in or workout.
+        Focus on consistency across
+        the full 12 weeks rather than
+        reacting to a single weigh-in
+        or workout.
       </p>
     </section>
 
     <section class="card">
-      <div class="eyebrow">CURRENT METRICS</div>
+      <div class="eyebrow">
+        CURRENT METRICS
+      </div>
 
       <div class="stat-grid">
+
         <div class="stat">
-          <span class="stat-label">Weight</span>
+          <span class="stat-label">
+            Weight
+          </span>
+
           <span class="stat-value">
-            ${latestWeight}${latestWeight !== "—" ? " lb" : ""}
+            ${latestWeight}${
+              latestWeight !== "—"
+                ? " lb"
+                : ""
+            }
           </span>
         </div>
 
         <div class="stat">
-          <span class="stat-label">Waist</span>
+          <span class="stat-label">
+            Waist
+          </span>
+
           <span class="stat-value">
-            ${latestWaist}${latestWaist !== "—" ? " in" : ""}
+            ${latestWaist}${
+              latestWaist !== "—"
+                ? " in"
+                : ""
+            }
           </span>
         </div>
 
         <div class="stat">
-          <span class="stat-label">Program</span>
-          <span class="stat-value">${totalCompletion()}%</span>
+          <span class="stat-label">
+            Program
+          </span>
+
+          <span class="stat-value">
+            ${totalCompletion()}%
+          </span>
         </div>
+
       </div>
 
       ${
         weightChange !== null
           ? `
             <p>
-              Weight change since first logged week:
+              Weight change since
+              first logged week:
               <strong>
-                ${weightChange > 0 ? "+" : ""}${weightChange} lb
+                ${
+                  weightChange > 0
+                    ? "+"
+                    : ""
+                }${weightChange} lb
               </strong>
             </p>
           `
@@ -1206,9 +2168,14 @@ function renderProgress() {
         waistChange !== null
           ? `
             <p>
-              Waist change since first logged week:
+              Waist change since
+              first logged week:
               <strong>
-                ${waistChange > 0 ? "+" : ""}${waistChange} in
+                ${
+                  waistChange > 0
+                    ? "+"
+                    : ""
+                }${waistChange} in
               </strong>
             </p>
           `
@@ -1217,7 +2184,9 @@ function renderProgress() {
     </section>
 
     <section class="card">
-      <div class="eyebrow">WEEK-BY-WEEK</div>
+      <div class="eyebrow">
+        WEEK-BY-WEEK
+      </div>
 
       ${progressRows()}
     </section>
@@ -1227,28 +2196,57 @@ function renderProgress() {
 function progressRows() {
   let html = "";
 
-  for (let week = 1; week <= 12; week++) {
-    const m = state.measurements[week] || {};
+  for (
+    let week = 1;
+    week <= 12;
+    week++
+  ) {
+    const measurement =
+      state.measurements[week] || {};
 
     html += `
-      <div class="progress-row">
+      <div
+        style="
+          display:grid;
+          grid-template-columns:
+          1fr auto auto auto;
+          gap:10px;
+          padding:12px 0;
+          border-bottom:
+          1px solid var(--border);
+          align-items:center;
+        "
+      >
         <div>
-          <strong>Week ${week}</strong>
-          <span>${phaseForWeek(week)}</span>
+          <strong>
+            Week ${week}
+          </strong>
+
+          <div
+            style="
+              color:var(--muted);
+              font-size:11px;
+              margin-top:3px;
+            "
+          >
+            ${phaseForWeek(week)}
+          </div>
         </div>
 
         <div>
           ${
-            m.weight !== undefined && m.weight !== ""
-              ? `${m.weight} lb`
+            measurement.weight !== undefined &&
+            measurement.weight !== ""
+              ? `${measurement.weight} lb`
               : "—"
           }
         </div>
 
         <div>
           ${
-            m.waist !== undefined && m.waist !== ""
-              ? `${m.waist} in`
+            measurement.waist !== undefined &&
+            measurement.waist !== ""
+              ? `${measurement.waist} in`
               : "—"
           }
         </div>
@@ -1262,524 +2260,389 @@ function progressRows() {
 
   return html;
 }
-
 /* ------------------------------
    AFT TESTING
 ------------------------------ */
 
 function renderAFT() {
-  const tests = Array.isArray(state.aftTests)
-    ? state.aftTests
-    : [];
+  const tests =
+    Array.isArray(state.aftTests)
+      ? state.aftTests
+      : [];
 
   app.innerHTML = `
     <section class="hero">
-      <div class="eyebrow">AFT TRACKER</div>
-      <h1>Test. Record. Improve.</h1>
+      <div class="eyebrow">
+        AFT TRACKER
+      </div>
+
+      <h1>
+        Test. Record. Improve.
+      </h1>
+
       <p>
-        Save periodic performance checks so you can see whether
-        your training is moving the right direction.
+        Save periodic performance checks so you can see
+        whether your training is moving in the right direction.
       </p>
     </section>
 
     <section class="card">
-      <div class="eyebrow">NEW TEST</div>
-
-      <div class="measurement-row">
-        <div class="field">
-          <label>DATE</label>
-          <input id="aftDate" type="date">
-        </div>
-
-        <div class="field">
-          <label>DEADLIFT (LB)</label>
-          <input id="aftDeadlift" type="number">
-        </div>
+      <div class="eyebrow">
+        NEW TEST
       </div>
 
       <div class="measurement-row">
         <div class="field">
-          <label>HAND-RELEASE PUSH-UPS</label>
-          <input id="aftPushups" type="number">
+          <label>
+            DATE
+          </label>
+
+          <input
+            id="aftDate"
+            type="date"
+          >
         </div>
 
         <div class="field">
-          <label>PLANK</label>
-          <input id="aftPlank"
-                 type="text"
-                 placeholder="Example: 2:15">
+          <label>
+            DEADLIFT (LB)
+          </label>
+
+          <input
+            id="aftDeadlift"
+            type="number"
+          >
+        </div>
+      </div>
+
+      <div class="measurement-row">
+        <div class="field">
+          <label>
+            HAND-RELEASE PUSH-UPS
+          </label>
+
+          <input
+            id="aftPushups"
+            type="number"
+          >
+        </div>
+
+        <div class="field">
+          <label>
+            PLANK
+          </label>
+
+          <input
+            id="aftPlank"
+            type="text"
+            placeholder="Example: 2:15"
+          >
         </div>
       </div>
 
       <div class="field">
-        <label>2-MILE RUN</label>
-        <input id="aftRun"
-               type="text"
-               placeholder="Example: 18:45">
+        <label>
+          2-MILE RUN
+        </label>
+
+        <input
+          id="aftRun"
+          type="text"
+          placeholder="Example: 18:45"
+        >
       </div>
 
       <div class="field">
-        <label>NOTES</label>
-        <textarea id="aftNotes"
-                  placeholder="Conditions, pacing, how you felt..."></textarea>
+        <label>
+          NOTES
+        </label>
+
+        <textarea
+          id="aftNotes"
+          placeholder="Conditions, pacing, how you felt..."
+        ></textarea>
       </div>
 
-      <button class="primary" onclick="saveAFTTest()">
+      <button
+        class="primary"
+        onclick="saveAFTTest()"
+      >
         Save Test
       </button>
     </section>
 
     <section class="card">
-      <div class="eyebrow">TEST HISTORY</div>
+      <div class="eyebrow">
+        TEST HISTORY
+      </div>
 
       ${
         tests.length
           ? tests
               .slice()
               .reverse()
-              .map((test, reverseIndex) => {
-                const originalIndex =
-                  tests.length - 1 - reverseIndex;
+              .map(
+                (
+                  test,
+                  reverseIndex
+                ) => {
+                  const originalIndex =
+                    tests.length -
+                    1 -
+                    reverseIndex;
 
-                return `
-                  <div class="aft-test">
-                    <div class="aft-test-header">
-                      <strong>${test.date || "Undated Test"}</strong>
+                  return `
+                    <div
+                      style="
+                        padding:16px 0;
+                        border-bottom:
+                        1px solid var(--border);
+                      "
+                    >
+                      <div
+                        style="
+                          display:flex;
+                          justify-content:
+                          space-between;
+                          align-items:center;
+                          gap:10px;
+                        "
+                      >
+                        <strong>
+                          ${
+                            test.date ||
+                            "Undated Test"
+                          }
+                        </strong>
 
-                      <button class="text-button"
-                              onclick="deleteAFTTest(${originalIndex})">
-                        Delete
-                      </button>
+                        <button
+                          class="text-button"
+                          onclick="
+                            deleteAFTTest(
+                              ${originalIndex}
+                            )
+                          "
+                        >
+                          Delete
+                        </button>
+                      </div>
+
+                      <div class="stat-grid">
+
+                        <div class="stat">
+                          <span class="stat-label">
+                            Deadlift
+                          </span>
+
+                          <span class="stat-value">
+                            ${
+                              test.deadlift ||
+                              "—"
+                            }
+                          </span>
+                        </div>
+
+                        <div class="stat">
+                          <span class="stat-label">
+                            HR Push-Ups
+                          </span>
+
+                          <span class="stat-value">
+                            ${
+                              test.pushups ||
+                              "—"
+                            }
+                          </span>
+                        </div>
+
+                        <div class="stat">
+                          <span class="stat-label">
+                            Plank
+                          </span>
+
+                          <span class="stat-value">
+                            ${
+                              test.plank ||
+                              "—"
+                            }
+                          </span>
+                        </div>
+
+                        <div class="stat">
+                          <span class="stat-label">
+                            2-Mile
+                          </span>
+
+                          <span class="stat-value">
+                            ${
+                              test.run ||
+                              "—"
+                            }
+                          </span>
+                        </div>
+
+                      </div>
+
+                      ${
+                        test.notes
+                          ? `
+                            <p>
+                              ${escapeHTML(
+                                test.notes
+                              )}
+                            </p>
+                          `
+                          : ""
+                      }
                     </div>
-
-                    <div class="stat-grid">
-                      <div class="stat">
-                        <span class="stat-label">Deadlift</span>
-                        <span class="stat-value">
-                          ${test.deadlift || "—"}
-                        </span>
-                      </div>
-
-                      <div class="stat">
-                        <span class="stat-label">HR Push-Ups</span>
-                        <span class="stat-value">
-                          ${test.pushups || "—"}
-                        </span>
-                      </div>
-
-                      <div class="stat">
-                        <span class="stat-label">Plank</span>
-                        <span class="stat-value">
-                          ${test.plank || "—"}
-                        </span>
-                      </div>
-
-                      <div class="stat">
-                        <span class="stat-label">2-Mile</span>
-                        <span class="stat-value">
-                          ${test.run || "—"}
-                        </span>
-                      </div>
-                    </div>
-
-                    ${
-                      test.notes
-                        ? `<p>${escapeHTML(test.notes)}</p>`
-                        : ""
-                    }
-                  </div>
-                `;
-              })
+                  `;
+                }
+              )
               .join("")
           : `
             <p>
-              No AFT tests saved yet. Add your first test above.
+              No AFT tests saved yet.
+              Add your first test above.
             </p>
           `
       }
     </section>
   `;
 
-  const dateInput = document.getElementById("aftDate");
+  const dateInput =
+    document.getElementById(
+      "aftDate"
+    );
 
-  if (dateInput && !dateInput.value) {
-    dateInput.value = localDateKey();
+  if (
+    dateInput &&
+    !dateInput.value
+  ) {
+    dateInput.value =
+      localDateKey();
   }
 }
 
 function saveAFTTest() {
   const test = {
-    date: document.getElementById("aftDate")?.value || "",
-    deadlift: document.getElementById("aftDeadlift")?.value || "",
-    pushups: document.getElementById("aftPushups")?.value || "",
-    plank: document.getElementById("aftPlank")?.value || "",
-    run: document.getElementById("aftRun")?.value || "",
-    notes: document.getElementById("aftNotes")?.value || ""
+    date:
+      document.getElementById(
+        "aftDate"
+      )?.value || "",
+
+    deadlift:
+      document.getElementById(
+        "aftDeadlift"
+      )?.value || "",
+
+    pushups:
+      document.getElementById(
+        "aftPushups"
+      )?.value || "",
+
+    plank:
+      document.getElementById(
+        "aftPlank"
+      )?.value || "",
+
+    run:
+      document.getElementById(
+        "aftRun"
+      )?.value || "",
+
+    notes:
+      document.getElementById(
+        "aftNotes"
+      )?.value || ""
   };
 
-  if (!Array.isArray(state.aftTests)) {
+  if (
+    !Array.isArray(
+      state.aftTests
+    )
+  ) {
     state.aftTests = [];
   }
 
   state.aftTests.push(test);
+
   saveData();
   renderAFT();
 }
 
 function deleteAFTTest(index) {
-  if (!Array.isArray(state.aftTests)) return;
+  if (
+    !Array.isArray(
+      state.aftTests
+    )
+  ) {
+    return;
+  }
 
-  state.aftTests.splice(index, 1);
+  state.aftTests.splice(
+    index,
+    1
+  );
+
   saveData();
   renderAFT();
 }
 
+
+/* ------------------------------
+   HELPERS
+------------------------------ */
+
 function escapeHTML(value) {
   return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+    .replaceAll(
+      "&",
+      "&amp;"
+    )
+    .replaceAll(
+      "<",
+      "&lt;"
+    )
+    .replaceAll(
+      ">",
+      "&gt;"
+    )
+    .replaceAll(
+      '"',
+      "&quot;"
+    )
+    .replaceAll(
+      "'",
+      "&#039;"
+    );
 }
 
 function localDateKey() {
-  const now = new Date();
+  const now =
+    new Date();
 
-  const year = now.getFullYear();
-  const month = String(now.getMonth() + 1).padStart(2, "0");
-  const day = String(now.getDate()).padStart(2, "0");
+  const year =
+    now.getFullYear();
+
+  const month =
+    String(
+      now.getMonth() + 1
+    ).padStart(
+      2,
+      "0"
+    );
+
+  const day =
+    String(
+      now.getDate()
+    ).padStart(
+      2,
+      "0"
+    );
 
   return `${year}-${month}-${day}`;
 }
-/* ------------------------------
-   SKINCARE
------------------------------- */
 
-const SKINCARE = {
-  morning: [
-    {
-      id: "am-cleanser",
-      product: "Gentle Facial Cleanser",
-      image:
-        "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=300&q=80",
-      description:
-        "Start with a gentle cleanse to remove overnight oil and prepare your skin for the rest of the routine.",
-      how:
-        "Wet your face with lukewarm water. Massage a small amount of cleanser over the face for about 30–60 seconds, then rinse and gently pat dry.",
-      video:
-        "https://www.youtube.com/results?search_query=dermatologist+how+to+properly+wash+face+gentle+cleanser"
-    },
-    {
-      id: "am-vitamin-c",
-      product: "Timeless 20% Vitamin C + E Ferulic Acid Serum",
-      image:
-        "https://www.timelessha.com/cdn/shop/products/20percent-vitamin-c-e-ferulic-acid-serum.jpg",
-      description:
-        "Your morning antioxidant step. Vitamin C can support brighter, more even-looking skin and complements daily sunscreen.",
-      how:
-        "Apply a thin, even layer to the face after cleansing. Do not concentrate extra serum beneath the eyes or on the lighter upper-cheek area. Allow it to absorb before continuing.",
-      video:
-        "https://www.youtube.com/results?search_query=how+to+apply+vitamin+c+serum+dermatologist"
-    },
-    {
-      id: "am-caffeine",
-      product: "The Ordinary Caffeine Solution 5% + EGCG",
-      image:
-        "https://theordinary.com/on/demandware.static/-/Sites-deciem-master-catalog/default/dw/images/products/TheOrdinary/rdn-caffeine-solution-5pct-egcg-30ml.png",
-      description:
-        "Optional eye-area serum intended to help the appearance of puffiness and dark circles.",
-      how:
-        "Use a very small amount around the orbital area. Gently tap it in rather than rubbing or dragging the skin outward.",
-      video:
-        "https://www.youtube.com/results?search_query=The+Ordinary+Caffeine+Solution+5%25+EGCG+how+to+use"
-    },
-    {
-      id: "am-moisturizer",
-      product: "La Roche-Posay Toleriane Double Repair Face Moisturizer",
-      image:
-        "https://www.laroche-posay.us/dw/image/v2/AAFM_PRD/on/demandware.static/-/Sites-lrp-master-catalog/default/dw/images/large/3337875545792_Toleriane_Double_Repair_Face_Moisturizer.jpg",
-      description:
-        "Moisturizer to support the skin barrier and reduce dryness or irritation from active products.",
-      how:
-        "Apply an even layer over the face and neck after your serums have absorbed.",
-      video:
-        "https://www.youtube.com/results?search_query=how+to+apply+facial+moisturizer+dermatologist"
-    },
-    {
-      id: "am-sunscreen",
-      product: "Broad-Spectrum Face Sunscreen SPF 30–50+",
-      image:
-        "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=300&q=80",
-      description:
-        "The most important final morning step. Daily broad-spectrum sunscreen helps protect against UV damage, uneven pigmentation and premature skin aging.",
-      how:
-        "Apply generously to the face, ears and exposed neck as the final skincare step. Reapply when prolonged sun exposure, sweating or other conditions call for it.",
-      video:
-        "https://www.youtube.com/results?search_query=dermatologist+how+much+sunscreen+apply+face"
-    }
-  ],
-
-  nightRetinal: [
-    {
-      id: "pm-retinal-cleanser",
-      product: "Gentle Facial Cleanser",
-      image:
-        "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=300&q=80",
-      description:
-        "Remove sunscreen, sweat and daily buildup before applying retinal.",
-      how:
-        "Cleanse gently with lukewarm water and pat your skin completely dry before moving to retinal.",
-      video:
-        "https://www.youtube.com/results?search_query=dermatologist+how+to+properly+wash+face+gentle+cleanser"
-    },
-    {
-      id: "pm-retinal",
-      product: "The Ordinary Retinal 0.2% Emulsion",
-      image:
-        "https://theordinary.com/on/demandware.static/-/Sites-deciem-master-catalog/default/dw/images/products/TheOrdinary/rdn-retinal-0-2-emulsion-15ml.png",
-      description:
-        "Your primary retinoid. Retinal can help improve the appearance of fine lines, texture and uneven tone over time.",
-      how:
-        "On clean, dry skin, use about a pea-sized amount for the entire face. Keep it away from the eyelids, immediate under-eye area and corners of the eyes, nose and mouth. Start with 1–2 nights per week and increase only as your skin tolerates it.",
-      video:
-        "https://www.youtube.com/results?search_query=The+Ordinary+Retinal+0.2%25+Emulsion+how+to+use"
-    },
-    {
-      id: "pm-retinal-moisturizer",
-      product: "La Roche-Posay Toleriane Double Repair Face Moisturizer",
-      image:
-        "https://www.laroche-posay.us/dw/image/v2/AAFM_PRD/on/demandware.static/-/Sites-lrp-master-catalog/default/dw/images/large/3337875545792_Toleriane_Double_Repair_Face_Moisturizer.jpg",
-      description:
-        "Finish your retinal night with moisturizer to support the skin barrier.",
-      how:
-        "Apply an even layer over the face and neck after retinal. If you are particularly sensitive, you can also use moisturizer before retinal as a buffer.",
-      video:
-        "https://www.youtube.com/results?search_query=how+to+apply+facial+moisturizer+dermatologist"
-    }
-  ],
-
-  nightRecovery: [
-    {
-      id: "pm-recovery-cleanser",
-      product: "Gentle Facial Cleanser",
-      image:
-        "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=300&q=80",
-      description:
-        "A gentle cleanse starts your non-retinal recovery routine.",
-      how:
-        "Wash with lukewarm water and a gentle cleanser. Pat dry without rubbing.",
-      video:
-        "https://www.youtube.com/results?search_query=dermatologist+how+to+properly+wash+face+gentle+cleanser"
-    },
-    {
-      id: "pm-peptide",
-      product: "The Ordinary Multi-Peptide + HA Serum",
-      image:
-        "https://theordinary.com/on/demandware.static/-/Sites-deciem-master-catalog/default/dw/images/products/TheOrdinary/rdn-multi-peptide-ha-serum-30ml.png",
-      description:
-        "Your peptide and hydration serum for recovery evenings. This keeps it separate from your strong direct vitamin C morning routine.",
-      how:
-        "Apply a few drops to clean skin over the face and neck. Gently spread or press it into the skin and allow it to absorb before moisturizer.",
-      video:
-        "https://www.youtube.com/results?search_query=The+Ordinary+Multi-Peptide+HA+Serum+how+to+use"
-    },
-    {
-      id: "pm-recovery-caffeine",
-      product: "The Ordinary Caffeine Solution 5% + EGCG",
-      image:
-        "https://theordinary.com/on/demandware.static/-/Sites-deciem-master-catalog/default/dw/images/products/TheOrdinary/rdn-caffeine-solution-5pct-egcg-30ml.png",
-      description:
-        "Optional evening eye-area step if you want additional help with the appearance of puffiness or dark circles.",
-      how:
-        "Use only a small amount and gently tap around the orbital area. Avoid repeated rubbing or pulling of the skin.",
-      video:
-        "https://www.youtube.com/results?search_query=The+Ordinary+Caffeine+Solution+5%25+EGCG+how+to+use"
-    },
-    {
-      id: "pm-recovery-moisturizer",
-      product: "La Roche-Posay Toleriane Double Repair Face Moisturizer",
-      image:
-        "https://www.laroche-posay.us/dw/image/v2/AAFM_PRD/on/demandware.static/-/Sites-lrp-master-catalog/default/dw/images/large/3337875545792_Toleriane_Double_Repair_Face_Moisturizer.jpg",
-      description:
-        "Finish with moisturizer to support hydration and the skin barrier.",
-      how:
-        "Apply an even layer over the face and neck as the final step.",
-      video:
-        "https://www.youtube.com/results?search_query=how+to+apply+facial+moisturizer+dermatologist"
-    }
-  ]
-};
-
-function skincareDoneKey(routine, itemId) {
-  return `${localDateKey()}-${routine}-${itemId}`;
-}
-
-function skincareChecked(routine, itemId) {
-  return Boolean(
-    state.skincareCompleted &&
-    state.skincareCompleted[skincareDoneKey(routine, itemId)]
-  );
-}
-
-function toggleSkincare(routine, itemId, checked) {
-  if (!state.skincareCompleted) {
-    state.skincareCompleted = {};
-  }
-
-  const key = skincareDoneKey(routine, itemId);
-
-  if (checked) {
-    state.skincareCompleted[key] = true;
-  } else {
-    delete state.skincareCompleted[key];
-  }
-
-  saveData();
-}
-
-function skincareRoutineHTML(routineKey) {
-  const routine = SKINCARE[routineKey];
-
-  return routine
-    .map((item, index) => {
-      const checked = skincareChecked(routineKey, item.id)
-        ? "checked"
-        : "";
-
-      return `
-        <div class="skincare-step">
-
-          <div class="skincare-number">
-            ${index + 1}
-          </div>
-
-          <input
-            class="exercise-check"
-            type="checkbox"
-            ${checked}
-            onchange="toggleSkincare(
-              '${routineKey}',
-              '${item.id}',
-              this.checked
-            )"
-          >
-
-          <img
-            class="skincare-thumb"
-            src="${item.image}"
-            alt="${item.product}"
-            loading="lazy"
-            onerror="this.style.display='none'"
-          >
-
-          <div class="skincare-info">
-
-            <div class="skincare-product-name">
-              ${item.product}
-            </div>
-
-            <p>${item.description}</p>
-
-            <div class="skincare-how">
-              <strong>How to use:</strong>
-              ${item.how}
-            </div>
-
-            <a
-              class="skincare-video-link"
-              href="${item.video}"
-              target="_blank"
-              rel="noopener"
-            >
-              ▶ Video Demonstration
-            </a>
-
-          </div>
-        </div>
-      `;
-    })
-    .join("");
-}
-
-function renderSkincare() {
-  app.innerHTML = `
-    <section class="hero">
-      <div class="eyebrow">DAILY ROUTINE</div>
-      <h1>Skincare</h1>
-
-      <p>
-        A simple AM routine plus two PM options:
-        retinal nights and recovery nights.
-      </p>
-    </section>
-
-    <section class="card skincare-routine-card">
-      <div class="eyebrow">EVERY MORNING</div>
-      <h2>AM Routine</h2>
-
-      <p>
-        Complete these steps in order. Vitamin C stays in the
-        morning routine and sunscreen always finishes it.
-      </p>
-
-      ${skincareRoutineHTML("morning")}
-    </section>
-
-    <section class="card skincare-routine-card">
-      <div class="eyebrow">1–2 NIGHTS PER WEEK TO START</div>
-      <h2>Retinal Night</h2>
-
-      <div class="callout">
-        Start The Ordinary Retinal 0.2% slowly. Use one retinoid
-        at a time. Do not use your Granactive Retinoid 2% in the
-        same routine.
-      </div>
-
-      ${skincareRoutineHTML("nightRetinal")}
-    </section>
-
-    <section class="card skincare-routine-card">
-      <div class="eyebrow">NON-RETINAL EVENINGS</div>
-      <h2>Recovery + Peptide Night</h2>
-
-      <p>
-        Use Multi-Peptide + HA here rather than directly after
-        your Timeless 20% Vitamin C morning serum.
-      </p>
-
-      ${skincareRoutineHTML("nightRecovery")}
-    </section>
-
-    <section class="card">
-      <div class="eyebrow">EYE-AREA ADJUSTMENT</div>
-      <h2>Keep the lighter area simple for now.</h2>
-
-      <p>
-        For the next 2–3 weeks, avoid concentrating vitamin C,
-        retinal or brightening eye cream on the lighter strip
-        beneath the eyes and across the upper cheek. Use moisturizer
-        and sunscreen there. The caffeine serum is optional.
-      </p>
-
-      <p>
-        Avoid repeated rubbing or pulling outward around the eyes.
-      </p>
-    </section>
-
-    <section class="card">
-      <div class="eyebrow">RETINAL PROGRESSION</div>
-      <h2>Increase slowly.</h2>
-
-      <p>
-        Begin with 1–2 retinal nights per week. If your skin remains
-        comfortable without persistent redness, burning, peeling or
-        significant dryness, gradually increase the frequency rather
-        than jumping directly to nightly use.
-      </p>
-    </section>
-  `;
-}
 
 /* ------------------------------
    BACKUP + RESTORE
@@ -1788,41 +2651,67 @@ function renderSkincare() {
 function renderBackup() {
   app.innerHTML = `
     <section class="hero">
-      <div class="eyebrow">DATA</div>
-      <h1>Backup & Restore</h1>
+      <div class="eyebrow">
+        DATA
+      </div>
+
+      <h1>
+        Backup & Restore
+      </h1>
 
       <p>
-        Your training, measurements, AFT tests and skincare
-        completion are stored locally on this device.
+        Your training,
+        measurements,
+        AFT tests and skincare
+        completion are stored locally
+        on this device.
       </p>
     </section>
 
     <section class="card">
-      <div class="eyebrow">BACKUP</div>
-      <h2>Export your data.</h2>
+      <div class="eyebrow">
+        BACKUP
+      </div>
+
+      <h2>
+        Export your data.
+      </h2>
 
       <p>
-        Copy the text below and save it somewhere safe.
+        Copy the text below
+        and save it somewhere safe.
       </p>
 
       <textarea
         id="backupOutput"
         readonly
         style="min-height:220px;"
-      >${escapeHTML(JSON.stringify(state))}</textarea>
+      >${escapeHTML(
+        JSON.stringify(state)
+      )}</textarea>
 
-      <button class="primary" onclick="copyBackup()">
+      <button
+        class="primary"
+        onclick="copyBackup()"
+      >
         Copy Backup
       </button>
     </section>
 
     <section class="card">
-      <div class="eyebrow">RESTORE</div>
-      <h2>Import a backup.</h2>
+      <div class="eyebrow">
+        RESTORE
+      </div>
+
+      <h2>
+        Import a backup.
+      </h2>
 
       <p>
-        Paste a previously exported FORGE backup below.
-        Importing replaces the data currently stored on this device.
+        Paste a previously exported
+        FORGE backup below.
+        Importing replaces the data
+        currently stored on this device.
       </p>
 
       <textarea
@@ -1831,21 +2720,33 @@ function renderBackup() {
         placeholder="Paste FORGE backup here..."
       ></textarea>
 
-      <button class="secondary" onclick="restoreBackup()">
+      <button
+        class="secondary"
+        onclick="restoreBackup()"
+      >
         Restore Backup
       </button>
     </section>
 
     <section class="card">
-      <div class="eyebrow">RESET</div>
-      <h2>Start over.</h2>
+      <div class="eyebrow">
+        RESET
+      </div>
+
+      <h2>
+        Start over.
+      </h2>
 
       <p>
-        This permanently clears the locally stored FORGE data
+        This permanently clears
+        the locally stored FORGE data
         from this browser.
       </p>
 
-      <button class="secondary" onclick="resetData()">
+      <button
+        class="danger"
+        onclick="resetData()"
+      >
         Reset All Data
       </button>
     </section>
@@ -1853,56 +2754,105 @@ function renderBackup() {
 }
 
 async function copyBackup() {
-  const output = document.getElementById("backupOutput");
+  const output =
+    document.getElementById(
+      "backupOutput"
+    );
 
-  if (!output) return;
+  if (!output) {
+    return;
+  }
 
   output.select();
-  output.setSelectionRange(0, output.value.length);
+
+  output.setSelectionRange(
+    0,
+    output.value.length
+  );
 
   try {
-    await navigator.clipboard.writeText(output.value);
-    alert("FORGE backup copied.");
+    await navigator.clipboard
+      .writeText(
+        output.value
+      );
+
+    alert(
+      "FORGE backup copied."
+    );
   } catch {
-    document.execCommand("copy");
-    alert("FORGE backup copied.");
+    document.execCommand(
+      "copy"
+    );
+
+    alert(
+      "FORGE backup copied."
+    );
   }
 }
 
 function restoreBackup() {
-  const input = document.getElementById("restoreInput");
+  const input =
+    document.getElementById(
+      "restoreInput"
+    );
 
-  if (!input || !input.value.trim()) {
-    alert("Paste a backup first.");
+  if (
+    !input ||
+    !input.value.trim()
+  ) {
+    alert(
+      "Paste a backup first."
+    );
     return;
   }
 
   try {
-    const imported = JSON.parse(input.value.trim());
+    const imported =
+      JSON.parse(
+        input.value.trim()
+      );
 
     if (
       !imported ||
       typeof imported !== "object" ||
       Array.isArray(imported)
     ) {
-      throw new Error("Invalid backup");
+      throw new Error(
+        "Invalid backup"
+      );
     }
 
     state = {
-      ...structuredClone(defaultData),
+      ...defaultData,
       ...imported,
-      measurements: imported.measurements || {},
-      completed: imported.completed || {},
-      workoutData: imported.workoutData || {},
-      aftTests: Array.isArray(imported.aftTests)
-        ? imported.aftTests
-        : [],
+
+      measurements:
+        imported.measurements || {},
+
+      completed:
+        imported.completed || {},
+
+      workoutData:
+        imported.workoutData || {},
+
+      aftTests:
+        Array.isArray(
+          imported.aftTests
+        )
+          ? imported.aftTests
+          : [],
+
       skincareCompleted:
-        imported.skincareCompleted || {}
+        imported.skincareCompleted ||
+        {}
     };
 
     saveData();
-    alert("FORGE backup restored.");
+
+    alert(
+      "FORGE backup restored."
+    );
+
     renderHome();
   } catch {
     alert(
@@ -1912,99 +2862,423 @@ function restoreBackup() {
 }
 
 function resetData() {
-  const confirmed = confirm(
-    "Reset all FORGE data on this device? This cannot be undone unless you have a backup."
-  );
+  const confirmed =
+    confirm(
+      "Reset all FORGE data on this device? This cannot be undone unless you have a backup."
+    );
 
-  if (!confirmed) return;
+  if (!confirmed) {
+    return;
+  }
 
-  state = structuredClone(defaultData);
+  state = {
+    measurements: {},
+    completed: {},
+    workoutData: {},
+    aftTests: [],
+    recoveryMode: false,
+    skincareCompleted: {}
+  };
+
   saveData();
   renderHome();
 }
+
 
 /* ------------------------------
    DRAWER
 ------------------------------ */
 
-const drawer = document.getElementById("drawer");
-const overlay = document.getElementById("overlay");
-const menuButton = document.getElementById("menuButton");
+const drawer =
+  document.getElementById(
+    "drawer"
+  );
+
+const drawerOverlay =
+  document.getElementById(
+    "drawerOverlay"
+  );
+
+const menuBtn =
+  document.getElementById(
+    "menuBtn"
+  );
+
+const closeMenuBtn =
+  document.getElementById(
+    "closeMenu"
+  );
 
 function openDrawer() {
   if (drawer) {
-    drawer.classList.add("open");
+    drawer.classList.add(
+      "open"
+    );
   }
 
-  if (overlay) {
-    overlay.classList.remove("hidden");
+  if (drawerOverlay) {
+    drawerOverlay.classList.add(
+      "open"
+    );
   }
 }
 
 function closeDrawer() {
   if (drawer) {
-    drawer.classList.remove("open");
+    drawer.classList.remove(
+      "open"
+    );
   }
 
-  if (overlay) {
-    overlay.classList.add("hidden");
+  if (drawerOverlay) {
+    drawerOverlay.classList.remove(
+      "open"
+    );
   }
 }
 
-if (menuButton) {
-  menuButton.addEventListener("click", openDrawer);
+if (menuBtn) {
+  menuBtn.addEventListener(
+    "click",
+    openDrawer
+  );
 }
 
-if (overlay) {
-  overlay.addEventListener("click", closeDrawer);
+if (closeMenuBtn) {
+  closeMenuBtn.addEventListener(
+    "click",
+    closeDrawer
+  );
 }
 
-document.querySelectorAll("[data-view]").forEach(button => {
-  button.addEventListener("click", () => {
-    navigate(button.dataset.view);
+if (drawerOverlay) {
+  drawerOverlay.addEventListener(
+    "click",
+    closeDrawer
+  );
+}
+
+document
+  .querySelectorAll(
+    "[data-view]"
+  )
+  .forEach(button => {
+    button.addEventListener(
+      "click",
+      () => {
+        const view =
+          button.dataset.view;
+
+        closeDrawer();
+
+        navigate(view);
+      }
+    );
   });
-});
+
 
 /* ------------------------------
    MODAL EVENTS
 ------------------------------ */
 
-const modal = document.getElementById("modal");
+const modal =
+  document.getElementById(
+    "modal"
+  );
+
+document
+  .querySelectorAll(
+    "[data-close-modal]"
+  )
+  .forEach(button => {
+    button.addEventListener(
+      "click",
+      closeModal
+    );
+  });
 
 if (modal) {
-  modal.addEventListener("click", event => {
-    if (event.target === modal) {
-      closeModal();
+  modal.addEventListener(
+    "click",
+    event => {
+      if (
+        event.target === modal
+      ) {
+        closeModal();
+      }
     }
-  });
+  );
 }
 
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape") {
-    closeModal();
-    closeDrawer();
+
+/* ------------------------------
+   REST TIMER
+------------------------------ */
+
+const timerPanel =
+  document.getElementById(
+    "timerPanel"
+  );
+
+const timerBtn =
+  document.getElementById(
+    "timerBtn"
+  );
+
+const closeTimerBtn =
+  document.getElementById(
+    "closeTimer"
+  );
+
+const timerDisplay =
+  document.getElementById(
+    "timerDisplay"
+  );
+
+const timerStart =
+  document.getElementById(
+    "timerStart"
+  );
+
+const timerReset =
+  document.getElementById(
+    "timerReset"
+  );
+
+let timerSeconds = 60;
+let timerRemaining = 60;
+let timerInterval = null;
+let timerRunning = false;
+
+function updateTimerDisplay() {
+  if (!timerDisplay) {
+    return;
   }
-});
+
+  const minutes =
+    Math.floor(
+      timerRemaining / 60
+    );
+
+  const seconds =
+    timerRemaining % 60;
+
+  timerDisplay.textContent =
+    `${String(minutes).padStart(
+      2,
+      "0"
+    )}:${String(seconds).padStart(
+      2,
+      "0"
+    )}`;
+}
+
+function openTimer() {
+  if (timerPanel) {
+    timerPanel.classList.remove(
+      "hidden"
+    );
+  }
+}
+
+function closeTimer() {
+  if (timerPanel) {
+    timerPanel.classList.add(
+      "hidden"
+    );
+  }
+}
+
+function stopTimer() {
+  if (timerInterval) {
+    clearInterval(
+      timerInterval
+    );
+
+    timerInterval = null;
+  }
+
+  timerRunning = false;
+
+  if (timerStart) {
+    timerStart.textContent =
+      "Start";
+  }
+}
+
+function startTimer() {
+  if (timerRunning) {
+    stopTimer();
+    return;
+  }
+
+  if (
+    timerRemaining <= 0
+  ) {
+    timerRemaining =
+      timerSeconds;
+
+    updateTimerDisplay();
+  }
+
+  timerRunning = true;
+
+  if (timerStart) {
+    timerStart.textContent =
+      "Pause";
+  }
+
+  timerInterval =
+    setInterval(
+      () => {
+        timerRemaining -= 1;
+
+        if (
+          timerRemaining <= 0
+        ) {
+          timerRemaining = 0;
+
+          updateTimerDisplay();
+          stopTimer();
+
+          if (
+            "vibrate" in navigator
+          ) {
+            navigator.vibrate(
+              [200, 100, 200]
+            );
+          }
+
+          return;
+        }
+
+        updateTimerDisplay();
+      },
+      1000
+    );
+}
+
+function resetTimer() {
+  stopTimer();
+
+  timerRemaining =
+    timerSeconds;
+
+  updateTimerDisplay();
+}
+
+if (timerBtn) {
+  timerBtn.addEventListener(
+    "click",
+    openTimer
+  );
+}
+
+if (closeTimerBtn) {
+  closeTimerBtn.addEventListener(
+    "click",
+    closeTimer
+  );
+}
+
+if (timerStart) {
+  timerStart.addEventListener(
+    "click",
+    startTimer
+  );
+}
+
+if (timerReset) {
+  timerReset.addEventListener(
+    "click",
+    resetTimer
+  );
+}
+
+document
+  .querySelectorAll(
+    ".timer-presets [data-seconds]"
+  )
+  .forEach(button => {
+    button.addEventListener(
+      "click",
+      () => {
+        stopTimer();
+
+        timerSeconds =
+          Number(
+            button.dataset.seconds
+          );
+
+        timerRemaining =
+          timerSeconds;
+
+        updateTimerDisplay();
+      }
+    );
+  });
+
+if (timerPanel) {
+  timerPanel.addEventListener(
+    "click",
+    event => {
+      if (
+        event.target === timerPanel
+      ) {
+        closeTimer();
+      }
+    }
+  );
+}
+
+
+/* ------------------------------
+   ESCAPE KEY
+------------------------------ */
+
+document.addEventListener(
+  "keydown",
+  event => {
+    if (
+      event.key === "Escape"
+    ) {
+      closeModal();
+      closeDrawer();
+      closeTimer();
+    }
+  }
+);
+
 
 /* ------------------------------
    SERVICE WORKER
 ------------------------------ */
 
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("service-worker.js")
-      .catch(error => {
-        console.error(
-          "Service worker registration failed:",
-          error
-        );
-      });
-  });
+if (
+  "serviceWorker" in navigator
+) {
+  window.addEventListener(
+    "load",
+    () => {
+      navigator
+        .serviceWorker
+        .register(
+          "sw.js"
+        )
+        .catch(error => {
+          console.error(
+            "Service worker registration failed:",
+            error
+          );
+        });
+    }
+  );
 }
+
 
 /* ------------------------------
    START APP
 ------------------------------ */
 
+updateTimerDisplay();
 renderHome();
