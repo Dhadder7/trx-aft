@@ -789,3 +789,33 @@ canvas {
 .aisle-heading { margin:20px 0 3px;color:var(--gold); }
 @media (max-width:420px) { .nutrition-fields { grid-template-columns:1fr; } .meal-row { grid-template-columns:23px minmax(0,1fr) 60px; } }
 @media print { body { background:#fff;color:#111; } .topbar,.drawer,.drawer-overlay,.hero,.card:not(#grocery),#grocery button { display:none!important; } #grocery { display:block;border:0;box-shadow:none;color:#111; } #grocery p,#grocery small { color:#333; } #grocery .grocery-row { break-inside:avoid; } }
+
+/* Skin care */
+.skin-tabs { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:0 0 14px; }
+.skin-tabs button { min-height:48px;padding:9px 7px;border:1px solid var(--border);border-radius:12px;background:var(--surface);color:var(--muted);font-weight:800;font-size:12px; }
+.skin-tabs button.active { background:var(--gold);color:#15120b;border-color:var(--gold); }
+.skin-summary .callout { margin-top:14px; }
+.skin-routine-card { padding-top:4px;padding-bottom:4px; }
+.skin-step { display:grid;grid-template-columns:28px 74px minmax(0,1fr);gap:12px;align-items:start;padding:18px 0;border-bottom:1px solid var(--border); }
+.skin-step:last-child { border-bottom:0; }
+.skin-step.done { opacity:.62; }
+.skin-check { width:23px;height:23px;margin-top:23px;accent-color:var(--gold); }
+.skin-thumb { width:74px;height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:7px;text-align:center;background:linear-gradient(160deg,#f5f2ea,#cfc9bb);color:#151515;border:1px solid rgba(255,255,255,.14);border-radius:12px;box-shadow:0 8px 18px rgba(0,0,0,.22);overflow:hidden; }
+.skin-thumb::before { content:"";display:block;width:28px;height:7px;border-radius:3px;background:#1b1b1b; }
+.skin-thumb-brand { max-width:100%;font-size:7px;font-weight:800;line-height:1.1;text-transform:uppercase;letter-spacing:.04em; }
+.skin-thumb strong { font-size:15px;line-height:1; }
+.skin-thumb small { font-size:7px;line-height:1.05;color:#444; }
+.skin-step-number { color:var(--gold);font-size:9px;font-weight:900;letter-spacing:.12em; }
+.skin-copy h3 { margin:4px 0 2px;font-size:17px;line-height:1.18; }
+.skin-brand { color:var(--muted);font-size:11px;font-weight:700; }
+.skin-copy p { margin:10px 0;font-size:13px;line-height:1.5; }
+.skin-copy p strong { color:var(--text); }
+.skin-why { padding-left:10px;border-left:2px solid var(--olive); }
+.skin-links { display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:11px; }
+.skin-link { display:flex;align-items:center;justify-content:center;min-height:42px;padding:9px;text-align:center;text-decoration:none;font-size:11px; }
+@media (max-width:520px) {
+  .skin-tabs { grid-template-columns:1fr; }
+  .skin-step { grid-template-columns:26px 62px minmax(0,1fr);gap:9px; }
+  .skin-thumb { width:62px;height:82px; }
+  .skin-links { grid-template-columns:1fr; }
+}
