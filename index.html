@@ -18,37 +18,68 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.svg">
-  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet"
+        href="styles.css?v=20261005-2">
 </head>
 
 <body>
 
 <header class="topbar">
-  <button class="icon-button" id="menuBtn" aria-label="Open menu">☰</button>
+  <button class="icon-button"
+          id="menuBtn"
+          aria-label="Open menu">☰</button>
 
   <div class="brand">
     <span class="brand-main">FORGE</span>
     <span class="brand-sub">AFT REBUILD</span>
   </div>
 
-  <button class="icon-button" id="timerBtn" aria-label="Rest timer">⏱</button>
+  <button class="icon-button"
+          id="timerBtn"
+          aria-label="Rest timer">⏱</button>
 </header>
 
-<div id="drawerOverlay" class="drawer-overlay"></div>
+<div id="drawerOverlay"
+     class="drawer-overlay"></div>
 
-<nav id="drawer" class="drawer">
+<nav id="drawer"
+     class="drawer">
+
   <div class="drawer-title">
     <span>FORGE</span>
-    <button id="closeMenu" class="icon-button">×</button>
+
+    <button id="closeMenu"
+            class="icon-button">×</button>
   </div>
 
-  <button data-view="home">⌂ Dashboard</button>
-  <button data-view="weeks">▦ 12-Week Plan</button>
-  <button data-view="progress">↗ Progress</button>
-  <button data-view="aft">★ AFT Tracker</button>
-  <button data-view="nutrition">◉ Meals & Nutrition</button>
-  <button data-view="skincare">✦ Skin Care</button>
-  <button data-view="backup">⇩ Backup & Data</button>
+  <button data-view="home">
+    ⌂ Dashboard
+  </button>
+
+  <button data-view="weeks">
+    ▦ 12-Week Plan
+  </button>
+
+  <button data-view="progress">
+    ↗ Progress
+  </button>
+
+  <button data-view="aft">
+    ★ AFT Tracker
+  </button>
+
+  <button data-view="nutrition">
+    ◉ Meals & Nutrition
+  </button>
+
+  <button data-view="skincare">
+    ✦ Skin Care
+  </button>
+
+  <button data-view="backup">
+    ⇩ Backup & Data
+  </button>
 
   <div class="drawer-footer">
     TRX • 15-lb KB • Cardio • Mobility
@@ -57,22 +88,37 @@
 
 <main id="app"></main>
 
-<div id="modal" class="modal hidden">
-  <div class="modal-backdrop" data-close-modal></div>
+<div id="modal"
+     class="modal hidden">
+
+  <div class="modal-backdrop"
+       data-close-modal></div>
 
   <div class="modal-card">
-    <button class="modal-close" data-close-modal>×</button>
+
+    <button class="modal-close"
+            data-close-modal>×</button>
+
     <div id="modalContent"></div>
   </div>
 </div>
 
-<div id="timerPanel" class="timer-panel hidden">
+<div id="timerPanel"
+     class="timer-panel hidden">
+
   <div class="timer-card">
-    <button id="closeTimer" class="modal-close">×</button>
 
-    <div class="eyebrow">REST TIMER</div>
+    <button id="closeTimer"
+            class="modal-close">×</button>
 
-    <div id="timerDisplay" class="timer-display">01:00</div>
+    <div class="eyebrow">
+      REST TIMER
+    </div>
+
+    <div id="timerDisplay"
+         class="timer-display">
+      01:00
+    </div>
 
     <div class="timer-presets">
       <button data-seconds="30">:30</button>
@@ -82,14 +128,21 @@
     </div>
 
     <div class="timer-actions">
-      <button id="timerStart" class="primary">Start</button>
-      <button id="timerReset" class="secondary">Reset</button>
+      <button id="timerStart"
+              class="primary">
+        Start
+      </button>
+
+      <button id="timerReset"
+              class="secondary">
+        Reset
+      </button>
     </div>
   </div>
 </div>
 
-<script src="nutrition.js"></script>
-<script src="app.js"></script>
+<script src="nutrition.js?v=20261005-2"></script>
+<script src="app.js?v=20261005-2"></script>
 
 </body>
 </html>
