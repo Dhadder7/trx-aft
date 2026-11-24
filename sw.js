@@ -1,4 +1,4 @@
-const CACHE = "forge-aft-nutrition-v3";
+const CACHE = "forge-aft-share-v4";
 const FILES = [
   "./", "./index.html", "./styles.css",
   "./app.js", "./nutrition.js", "./manifest.json", "./icon.svg"
