@@ -6,7 +6,6 @@ const defaultData = {
   workoutData: {},
   aftTests: [],
   recoveryMode: false,
-  skincareCompleted: {}
 };
 
 let state = loadData();
@@ -255,220 +254,6 @@ const EX = {
   }
 };
 
-/* ------------------------------
-   SKIN CARE
------------------------------- */
-
-const SKINCARE = {
-  morning: [
-    {
-      id: "cleanse-am",
-      name: "Gentle Facial Cleanser",
-      image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=240&q=80",
-      how: "Wet your face with lukewarm water. Massage a small amount of gentle cleanser over the face for about 20–30 seconds, then rinse and gently pat dry. Do not scrub.",
-      video: "https://www.youtube.com/results?search_query=dermatologist+how+to+wash+face+gentle+cleanser"
-    },
-    {
-      id: "vitamin-c",
-      name: "Timeless 20% Vitamin C + E Ferulic Acid Serum",
-      image: "https://www.timelessha.com/cdn/shop/files/20_Vitamin_C_E_Ferulic_Acid_Serum_1oz.jpg?v=1741369927&width=360",
-      how: "Apply a thin, even layer to clean, dry skin. Spread gently across the face rather than concentrating it beneath the eyes. Keep it off the eyelids and stop using it on any area that stings or becomes irritated.",
-      video: "https://www.youtube.com/results?search_query=Timeless+20%25+Vitamin+C+E+Ferulic+how+to+apply"
-    },
-    {
-      id: "caffeine-am",
-      name: "The Ordinary Caffeine Solution 5% + EGCG",
-      image: "https://theordinary.com/on/demandware.static/-/Sites-deciem-master-catalog/default/dw58dd7509/Images/products/The%20Ordinary/rdn-caffeine-solution-5pct-egcg-30ml.png",
-      how: "Optional for temporary help with the appearance of puffiness. Use one small drop for each eye and gently tap along the orbital bone with a fingertip. Do not rub outward repeatedly or apply directly into the eyes.",
-      video: "https://www.youtube.com/results?search_query=The+Ordinary+Caffeine+Solution+5%25+EGCG+how+to+apply"
-    },
-    {
-      id: "moisturizer-am",
-      name: "La Roche-Posay Toleriane Double Repair Face Moisturizer",
-      image: "https://www.laroche-posay.us/dw/image/v2/AAFM_PRD/on/demandware.static/-/Sites-lrp-master-catalog/default/dw772c5531/img/3337875545792_Toleriane_Double_Repair_Face_Moisturizer_75ml.jpg",
-      how: "Apply a thin, even layer over the face and neck. Be gentle around the eye area. Moisturizer helps support the skin barrier and can reduce the dry look that makes fine lines more noticeable.",
-      video: "https://www.youtube.com/results?search_query=La+Roche+Posay+Toleriane+Double+Repair+how+to+apply"
-    },
-    {
-      id: "sunscreen-am",
-      name: "Broad-Spectrum Sunscreen SPF 30–50+",
-      image: "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=240&q=80",
-      how: "Finish every morning with broad-spectrum SPF 30 or higher over the entire face, ears and exposed neck. Apply it evenly rather than protecting only the eye area. Reapply when outdoors for extended periods, especially after sweating.",
-      video: "https://www.youtube.com/results?search_query=American+Academy+Dermatology+how+to+apply+sunscreen+face"
-    }
-  ],
-
-  nightRetinal: [
-    {
-      id: "cleanse-pm-r",
-      name: "Gentle Facial Cleanser",
-      image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=240&q=80",
-      how: "Wash with lukewarm water and a gentle cleanser. Pat dry rather than rubbing. If your skin is easily irritated, allow it to dry fully before the retinal step.",
-      video: "https://www.youtube.com/results?search_query=dermatologist+how+to+wash+face+gentle+cleanser"
-    },
-    {
-      id: "retinal-pm",
-      name: "The Ordinary Retinal 0.2% Emulsion",
-      image: "https://theordinary.com/on/demandware.static/-/Sites-deciem-master-catalog/default/dw7338b72f/Images/products/The%20Ordinary/rdn-retinal-02-emulsion-15ml.png",
-      how: "Use a small amount for the whole face at night. Apply a thin layer and keep it away from the eyelids, corners of the nose and lips, and the immediate under-eye area for now. Do not combine this routine with your Granactive Retinoid. Reduce frequency if you develop persistent dryness, burning, peeling or redness.",
-      video: "https://www.youtube.com/results?search_query=The+Ordinary+Retinal+0.2%25+Emulsion+how+to+use"
-    },
-    {
-      id: "moisturizer-pm-r",
-      name: "La Roche-Posay Toleriane Double Repair Face Moisturizer",
-      image: "https://www.laroche-posay.us/dw/image/v2/AAFM_PRD/on/demandware.static/-/Sites-lrp-master-catalog/default/dw772c5531/img/3337875545792_Toleriane_Double_Repair_Face_Moisturizer_75ml.jpg",
-      how: "Finish with moisturizer over the face and neck. If retinal is drying, you can also use moisturizer before retinal as a buffer, then add another light layer afterward.",
-      video: "https://www.youtube.com/results?search_query=La+Roche+Posay+Toleriane+Double+Repair+how+to+apply"
-    }
-  ],
-
-  nightRecovery: [
-    {
-      id: "cleanse-pm-rec",
-      name: "Gentle Facial Cleanser",
-      image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=240&q=80",
-      how: "Wash gently with lukewarm water, rinse thoroughly and pat dry. Avoid scrubbing or exfoliating the lighter-looking under-eye and upper-cheek area.",
-      video: "https://www.youtube.com/results?search_query=dermatologist+how+to+wash+face+gentle+cleanser"
-    },
-    {
-      id: "peptide-pm",
-      name: "The Ordinary Multi-Peptide + HA Serum",
-      image: "https://theordinary.com/on/demandware.static/-/Sites-deciem-master-catalog/default/dw2f9d80a8/Images/products/The%20Ordinary/rdn-multi-peptide-ha-serum-30ml.png",
-      how: "Apply a few drops in a thin layer over the face. This is your gentler treatment night between retinal applications.",
-      video: "https://www.youtube.com/results?search_query=The+Ordinary+Multi-Peptide+HA+Serum+how+to+use"
-    },
-    {
-      id: "moisturizer-pm-rec",
-      name: "La Roche-Posay Toleriane Double Repair Face Moisturizer",
-      image: "https://www.laroche-posay.us/dw/image/v2/AAFM_PRD/on/demandware.static/-/Sites-lrp-master-catalog/default/dw772c5531/img/3337875545792_Toleriane_Double_Repair_Face_Moisturizer_75ml.jpg",
-      how: "Apply evenly over the face and neck, including a light layer beneath the eyes if it does not sting. On recovery nights the priority is hydration and keeping the skin barrier comfortable.",
-      video: "https://www.youtube.com/results?search_query=La+Roche+Posay+Toleriane+Double+Repair+how+to+apply"
-    }
-  ]
-};
-
-function skinDateKey() {
-  return new Date().toISOString().slice(0, 10);
-}
-
-function skinCheckKey(routine, id) {
-  return `${skinDateKey()}-${routine}-${id}`;
-}
-
-function toggleSkinStep(routine, id, checked) {
-  state.skincareCompleted ||= {};
-  state.skincareCompleted[skinCheckKey(routine, id)] = checked;
-  saveData();
-}
-
-function skinRoutineHTML(title, subtitle, routine, items) {
-  const rows = items.map(item => {
-    const checked =
-      state.skincareCompleted?.[skinCheckKey(routine, item.id)]
-        ? "checked"
-        : "";
-
-    return `
-      <div class="exercise" style="align-items:flex-start">
-        <input
-          class="exercise-check"
-          type="checkbox"
-          ${checked}
-          onchange="toggleSkinStep('${routine}','${item.id}',this.checked)"
-        >
-
-        <img
-          src="${item.image}"
-          alt="${item.name}"
-          loading="lazy"
-          style="width:64px;height:64px;border-radius:12px;object-fit:contain;background:#fff;padding:4px;flex-shrink:0"
-          onerror="this.style.display='none'"
-        >
-
-        <div style="flex:1;min-width:0">
-          <strong style="display:block;margin-bottom:6px">
-            ${item.name}
-          </strong>
-
-          <span style="display:block;color:var(--muted);line-height:1.45">
-            ${item.how}
-          </span>
-
-          <a
-            href="${item.video}"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="display:inline-block;margin-top:10px;text-decoration:none"
-          >
-            <button class="secondary" type="button">
-              ▶ Video demonstration
-            </button>
-          </a>
-        </div>
-      </div>
-    `;
-  }).join("");
-
-  return `
-    <section class="card">
-      <div class="eyebrow">${subtitle}</div>
-      <h2>${title}</h2>
-      ${rows}
-    </section>
-  `;
-}
-
-function renderSkincare() {
-  app.innerHTML = `
-    <section class="hero">
-      <div class="eyebrow">DAILY CARE</div>
-      <h1>Skin Care</h1>
-      <p>
-        Simple, consistent care for tone, texture, hydration and healthy aging.
-      </p>
-    </section>
-
-    <div class="callout">
-      Because you noticed a lighter-looking strip beneath and outward from your eyes,
-      avoid concentrating vitamin C, retinal or other brightening products there for now.
-      Apply products gently and evenly rather than repeatedly rubbing outward.
-    </div>
-
-    ${skinRoutineHTML(
-      "Morning Routine",
-      "AM • EVERY DAY",
-      "morning",
-      SKINCARE.morning
-    )}
-
-    ${skinRoutineHTML(
-      "Retinal Night",
-      "PM • TREATMENT NIGHT",
-      "nightRetinal",
-      SKINCARE.nightRetinal
-    )}
-
-    ${skinRoutineHTML(
-      "Recovery / Peptide Night",
-      "PM • BETWEEN RETINAL NIGHTS",
-      "nightRecovery",
-      SKINCARE.nightRecovery
-    )}
-
-    <section class="card">
-      <div class="eyebrow">HOW TO ROTATE</div>
-      <h2>Keep the routine gentle.</h2>
-
-      <p>
-        Use the morning routine daily. At night, alternate retinal nights with
-        recovery/peptide nights based on how your skin tolerates retinal. If your
-        skin becomes persistently red, painful, itchy, very dry, peeling or burning,
-        stop the irritating active and use gentle cleanser, moisturizer and daytime
-        sunscreen while your skin settles.
-      </p>
-    </section>
-  `;
-}
 /* ------------------------------
    12-WEEK PROGRAM
 ------------------------------ */
@@ -784,7 +569,7 @@ function loadData() {
 
     return {
       ...defaultData,
-      ...(saved || {}),
+      ...Object.fromEntries(Object.entries(saved || {}).filter(([key]) => key !== 'skincareCompleted')),
       measurements:
         saved?.measurements || {},
       completed:
@@ -795,8 +580,6 @@ function loadData() {
         Array.isArray(saved?.aftTests)
           ? saved.aftTests
           : [],
-      skincareCompleted:
-        saved?.skincareCompleted || {}
     };
   } catch {
     return {
@@ -805,7 +588,6 @@ function loadData() {
       workoutData: {},
       aftTests: [],
       recoveryMode: false,
-      skincareCompleted: {}
     };
   }
 }
@@ -864,10 +646,6 @@ function navigate(view) {
     ) {
       renderNutrition();
     }
-  }
-
-  if (view === "skincare") {
-    renderSkincare();
   }
 
   if (view === "backup") {
@@ -1026,27 +804,6 @@ function renderHome() {
       </button>
     </section>
 
-    <section class="card">
-      <div class="eyebrow">
-        SKIN CARE
-      </div>
-
-      <h2>
-        Keep the routine consistent.
-      </h2>
-
-      <p>
-        Track your morning routine,
-        retinal nights and recovery nights.
-      </p>
-
-      <button
-        class="secondary"
-        onclick="navigate('skincare')"
-      >
-        Open Skin Care
-      </button>
-    </section>
   `;
 }
 
@@ -2662,7 +2419,7 @@ function renderBackup() {
       <p>
         Your training,
         measurements,
-        AFT tests and skincare
+        AFT tests and workout
         completion are stored locally
         on this device.
       </p>
@@ -2824,7 +2581,7 @@ function restoreBackup() {
 
     state = {
       ...defaultData,
-      ...imported,
+      ...Object.fromEntries(Object.entries(imported).filter(([key]) => key !== 'skincareCompleted')),
 
       measurements:
         imported.measurements || {},
@@ -2842,9 +2599,6 @@ function restoreBackup() {
           ? imported.aftTests
           : [],
 
-      skincareCompleted:
-        imported.skincareCompleted ||
-        {}
     };
 
     saveData();
@@ -2877,7 +2631,6 @@ function resetData() {
     workoutData: {},
     aftTests: [],
     recoveryMode: false,
-    skincareCompleted: {}
   };
 
   saveData();
