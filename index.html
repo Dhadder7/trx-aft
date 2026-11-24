@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="icon.svg">
 
   <link rel="stylesheet"
-        href="styles.css?v=20261005-2">
+        href="styles.css?v=20261124-1">
 </head>
 
 <body>
@@ -73,9 +73,7 @@
     ◉ Meals & Nutrition
   </button>
 
-  <button data-view="skincare">
-    ✦ Skin Care
-  </button>
+  <button id="shareApp">↗ Share FORGE</button>
 
   <button data-view="backup">
     ⇩ Backup & Data
@@ -141,8 +139,18 @@
   </div>
 </div>
 
-<script src="nutrition.js?v=20261005-2"></script>
-<script src="app.js?v=20261005-2"></script>
+<script src="nutrition.js?v=20261124-1"></script>
+<script src="app.js?v=20261124-1"></script>
 
+<script>
+document.getElementById("shareApp").addEventListener("click", async () => {
+  const url = new URL("./", location.href).href;
+  try {
+    if (navigator.share) { await navigator.share({title:"FORGE | AFT Rebuild",url}); }
+    else if (navigator.clipboard) { await navigator.clipboard.writeText(url); alert("FORGE app link copied."); }
+    else { prompt("Copy this FORGE app link:",url); }
+  } catch (error) { if (error.name !== "AbortError") prompt("Copy this FORGE app link:",url); }
+});
+</script>
 </body>
 </html>
